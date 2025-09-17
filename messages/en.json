@@ -1,0 +1,924 @@
+{
+    "landingPage": {
+        "title": "Welcome to Sadef Admin Site"
+    },
+    "AuthHeader": {
+        "login": "Login",
+        "signup": "Sign Up"
+    },
+    "SignInPage": {
+        "title": {
+            "line1": "Welcome Back!",
+            "line2": "Sign in with your credentials."
+        },
+        "form": {
+            "email": "Email",
+            "emailPlaceholder": "Enter your email",
+            "password": "Password",
+            "passwordPlaceholder": "Enter your password",
+            "submit": "Log In",
+            "rememberMe": "Remember Me",
+            "forgotPassword": "Forgot Password",
+            "loginBtn": "Log In"
+        }
+    },
+    "SignUpPage": {
+        "title": {
+            "line1": "Welcome!",
+            "line2": "Join us today! Get special benefits and stay up-to-date."
+        },
+        "form": {
+            "firstName": "First Name",
+            "firstNamePlaceholder": "Enter your first name",
+            "lastName": "Last Name",
+            "lastNamePlaceholder": "Enter your last name",
+            "email": "Email",
+            "emailPlaceholder": "Enter your email",
+            "password": "Password",
+            "passwordPlaceholder": "Enter your password",
+            "confirmPassword": "Confirm Password",
+            "confirmPasswordPlaceholder": "Confirm your password",
+            "role": "Role",
+            "rolePlaceholder": "Select role",
+            "signupBtn": "Sign Up"
+        }
+    },
+    "ForgotPasswordPage": {
+        "title": {
+            "line1": "Having trouble to sign in?",
+            "line2": "Reset your password."
+        },
+        "form": {
+            "email": "Email",
+            "emailPlaceholder": "Enter your email",
+            "resetButton": "Reset Password"
+        },
+        "footer": {
+            "text1": "Don't want to reset?",
+            "text2": "Sign in"
+        }
+    },
+    "ResetPasswordPage": {
+        "title": {
+            "line1": "Reset Password",
+            "line2": "Enter your new password."
+        },
+        "form": {
+            "newPassword": "New Password",
+            "newPasswordPlaceholder": "Enter your new password",
+            "confirmPassword": "Confirm Password",
+            "confirmPasswordPlaceholder": "Confirm your password",
+            "resetButton": "Reset Password",
+            "description": {
+                "line1": "Enter a new password for your."
+            }
+        }
+    },
+    "SideMenu": {
+        "dashboard": "Dashboard",
+        "property": {
+            "title": "Property",
+            "submenu": {
+                "list": "Property List",
+                "add": "Add Property"
+            }
+        },
+        "blog": {
+            "title": "Blog",
+            "submenu": {
+                "list": "Blog List",
+                "add": "Add Blog"
+            }
+        },
+        "lead": {
+            "title": "Leads",
+            "submenu": {
+                "list": "Leads List"
+            }
+        },
+        "maintenanceRequest": {
+            "title": "Maintenance Request",
+            "submenu": {
+                "list": "Maintenance List",
+                "add": "Add Request"
+            }
+        },
+        "userManagement": {
+            "title": "User Management",
+            "submenu": {
+                "list": "Users List",
+                "add": "Add User"
+            }
+        },
+        "contact": {
+            "title": "Contact",
+            "submenu": {
+                "list": "Contact List"
+            }
+        }
+    },
+    "loading": {
+        "title": "Loading..."
+    },
+    "Dashboard": {
+        "title": "Dashboard",
+        "description": "Welcome to the dashboard of Sadef Admin Site",
+        "propertyAnalytics": {
+            "title": "Property Analytics",
+            "cards": {
+                "totalProperties": "Total Properties",
+                "activeProperties": "Active Properties",
+                "expiredProperties": "Expired Properties",
+                "pending": "Pending",
+                "approved": "Approved",
+                "sold": "Sold",
+                "rejected": "Rejected",
+                "archived": "Archived"
+            },
+            "unitCategoriesCard": {
+                "title": "Unit Categories"
+            },
+            "financialOverviewCard": {
+                "title": "Financial Overview",
+                "content": {
+                    "totalExpectedAnnualRent": "Total Expected Annual Rent",
+                    "totalProjectedResaleValue": "Total Projected Resale Value",
+                    "propertiesWithInvestmentData": "Properties with Investment Data",
+                    "listedThisWeek": "Listed This Week"
+                }
+            }
+        },
+        "leadAnalytics": {
+            "title": "Lead Analytics",
+            "cards": {
+                "totalLeads": "Total Leads",
+                "leadsThisMonth": "Leads This Month",
+                "activeLeads": "Active Leads",
+                "newLeads": "New Leads",
+                "contacted": "Contacted",
+                "inDiscussion": "In Discussion",
+                "visitScheduled": "Visit Scheduled",
+                "converted": "Converted",
+                "rejected": "Rejected"
+            },
+            "leadDistributionCard": {
+                "title": "Lead Distribution",
+                "new": "New",
+                "contacted": "Contacted",
+                "inDiscussion": "In Discussion",
+                "visitScheduled": "Visit Scheduled",
+                "converted": "Converted",
+                "rejected": "Rejected"
+            },
+            "leadSummaryCard": {
+                "title": "Lead Summary",
+                "content": {
+                    "totalLeads": "Total Leads",
+                    "activeLeads": "Active Leads",
+                    "converted": "Converted"
+                }
+            }
+        },
+        "maintenanceRequestAnalytics": {
+            "title": "Maintenance Request Analytics",
+            "cards": {
+                "totalRequests": "Total Requests",
+                "thisMonth": "This Month",
+                "pending": "Pending",
+                "inProgress": "In Progress",
+                "resolved": "Resolved",
+                "rejected": "Rejected"
+            },
+            "requestStatusDistributionCard": {
+                "title": "Request Status Distribution",
+                "pending": "Pending",
+                "inProgress": "In Progress",
+                "resolved": "Resolved",
+                "rejected": "Rejected"
+            },
+            "maintenanceRequestSummaryCard": {
+                "title": "Maintenance Request Summary",
+                "content": {
+                    "totalRequests": "Total Requests",
+                    "pending": "Pending",
+                    "resolved": "Resolved"
+                }
+            }
+        },
+        "contactAnalytics": {
+            "title": "Contact Analytics",
+            "cards": {
+                "totalContacts": "Total Contacts",
+                "newContacts": "New Contacts",
+                "inProgress": "In Progress",
+                "urgentContacts": "Urgent Contacts"
+            },
+            "contactsbyTypeCard": {
+                "title": "Contacts by Type"
+            },
+            "contactsbyStatusCard": {
+                "title": "Contacts by Status",
+                "new": "New",
+                "inProgress": "In Progress",
+                "contacted": "Contacted",
+                "responded": "Responded",
+                "scheduled": "Scheduled",
+                "completed": "Completed",
+                "cancelled": "Cancelled",
+                "spam": "Spam"
+            },
+            "recentContactsCard": {
+                "title": "Recent Contacts"
+            },
+            "noDataAvailable": "No data available"
+        }
+    },
+    "tableFooter": {
+        "pages": "Pages",
+        "of": "of",
+        "rowsPerPage": "Rows per page"
+    },
+    "DeletePopover": {
+        "yes": "Yes",
+        "no": "No",
+        "deleteItem": "Delete Item"
+    },
+    "PropertyPages": {
+        "propertyListPage": {
+            "title": "Property List Page",
+            "description": "The Property List Page displays all available properties with key details for easy browsing.",
+            "navigateCreateProperty": {
+                "createPropertyBtn": "+ Create Property"
+            },
+            "propertyFiltersCard": {
+                "title": "Filter Properties",
+                "city": "City",
+                "cityPlaceholder": "Select City",
+                "location": "Location",
+                "locationPlaceholder": "Enter Location",
+                "status": "Status",
+                "statusPlaceholder": "Select Status",
+                "propertyType": "Property Type",
+                "propertyTypePlaceholder": "Select Property Type",
+                "applyFilter": "Apply Filter",
+                "clearAllFilter": "Clear All Filter"
+            },
+            "propertyTable": {
+                "title": "Property Table",
+                "searchPlaceholder": "Search property...",
+                "propertyHeader": {
+                    "id": "ID",
+                    "title": "Title",
+                    "price": "Price",
+                    "city": "City",
+                    "location": "Location",
+                    "areaSize": "Area Size",
+                    "bedrooms": "Bedrooms",
+                    "bathrooms": "Bathrooms",
+                    "status": "Status",
+                    "propertyType": "Property Type",
+                    "expiryDate": "Expiry Date",
+                    "investorOnly": "Investor Only",
+                    "actions": "Actions",
+                    "saving": "Saving...",
+                    "save": "Save",
+                    "editTooltip": "Edit Property",
+                    "viewTooltip": "View Property",
+                    "propertyDelete": {
+                        "title": "Delete the Property",
+                        "description": "Are you sure you want to delete this #{id} property?"
+                    },
+                    "propertyToast": {
+                        "statusUpdated": "Status updated successfully",
+                        "statusUpdateFailed": "Failed to update status"
+                    }
+                }
+            }
+        },
+        "propertyDetailPage": {
+            "title": "Property Detail Page",
+            "description": "The Property Detail Page displays the details of a property with key details.",
+            "loading": "Loading property details...",
+            "propertyDetails": {
+                "basicInformationCard": {
+                    "title": "Basic Information",
+                    "infoCard": {
+                        "title": "Title",
+                        "type": "Type",
+                        "unitCategory": "Unit Category",
+                        "city": "City",
+                        "location": "Location",
+                        "areaSize": "Area Size",
+                        "status": "Status",
+                        "investorOnly": "Investor Only"
+                    }
+                },
+                "financialInformationCard": {
+                    "title": "Financial Information",
+                    "infoCard": {
+                        "price": "Price",
+                        "projectedResaleValue": "Projected Resale Value",
+                        "expectedAnnualRent": "Expected Annual Rent",
+                        "warrantyInfo": "Warranty Info",
+                        "expectedDeliveryDate": "Expected Delivery Date",
+                        "expiryDate": "Expiry Date"
+                    }
+                },
+                "unitDetailsCard": {
+                    "title": "Unit Details",
+                    "infoCard": {
+                        "unitName": "Unit Name",
+                        "bedrooms": "Bedrooms",
+                        "bathrooms": "Bathrooms",
+                        "totalFloors": "Total Floors"
+                    }
+                },
+                "locationContactCard": {
+                    "title": "Location & Contact",
+                    "infoCard": {
+                        "latitude": "Latitude",
+                        "longitude": "Longitude",
+                        "whatsAppNumber": "WhatsApp Number"
+                    }
+                },
+                "featuresCard": {
+                    "title": "Features",
+                    "noFeatures": "No features listed."
+                },
+                "descriptionCard": {
+                    "title": "Description"
+                },
+                "imagesVideosCard": {
+                    "title": "Images & Videos"
+                },
+                "timelineCard": {
+                    "title": "Property Timeline",
+                    "actionTakenBy": "Action taken by",
+                    "noTimeline": "No timeline data available for this property."
+                }
+            }
+        },
+        "createPropertyPage": {
+            "title": "Create Property Page",
+            "description": "The Create Property Page allows you to create a new property.",
+            "loading": "Loading property creation...",
+            "createProperty": {
+                "steps": {
+                    "basicInfo": "Basic Info",
+                    "propertyDetails": "Property Details",
+                    "propertyMedia": "Property Media",
+                    "location": "Location / Map",
+                    "contactPublishing": "Contact & Publishing"
+                },
+                "form": {
+                    "stepBasicInformation": {
+                        "title": "Basic Information",
+                        "propertyTitle": "Property Title",
+                        "propertyTitlePlaceholder": "Enter property title",
+                        "price": "Price",
+                        "pricePlaceholder": "Enter price",
+                        "propertyType": "Property Type",
+                        "propertyTypePlaceholder": "Select property type",
+                        "unitCategory": "Unit Category",
+                        "unitCategoryPlaceholder": "Select unit category",
+                        "city": "City",
+                        "cityPlaceholder": "Select or search city",
+                        "location": "Location",
+                        "locationPlaceholder": "Enter location/address",
+                        "areaSize": "Area Size (sq ft)",
+                        "areaSizePlaceholder": "Enter area size",
+                        "bedrooms": "Bedrooms",
+                        "bedroomsPlaceholder": "Enter number of bedrooms",
+                        "bathrooms": "Bathrooms",
+                        "bathroomsPlaceholder": "Enter number of bathrooms",
+                        "unitName": "Unit Name",
+                        "unitNamePlaceholder": "Enter unit name",
+                        "totalFloors": "Total Floors",
+                        "totalFloorsPlaceholder": "Total floors",
+                        "investorOnly": "Investor Only Property",
+                        "basicInfoSchema": {
+                            "title": "Title is required",
+                            "titleMax": "Title must be less than 200 characters",
+                            "price": "Price must be greater then 0",
+                            "priceMin": "Price must be a positive number",
+                            "city": "City is required",
+                            "location": "Location is required",
+                            "areaSize": "Area size must be a positive number",
+                            "areaSizeMin": "Area size must be a positive number"
+                        }
+                    },
+                    "stepPropertyDetails": {
+                        "title": "Property Details",
+                        "description": "Description",
+                        "features": "Features",
+                        "featuresPlaceholder": "Select features",
+                        "projectedResale": "Projected Resale",
+                        "projectedResalePlaceholder": "Enter projected resale value",
+                        "expectedAnnualRent": "Expected Annual Rent",
+                        "expectedAnnualRentPlaceholder": "Enter expected annual rent",
+                        "warrantyInformation": "Warranty Information",
+                        "warrantyInformationPlaceholder": "Enter warranty details",
+                        "expectedDeliveryDate": "Expected Delivery Date",
+                        "expiryDate": "Expiry Date"
+                    },
+                    "stepPropertyMedia": {
+                        "title": "Property Media",
+                        "propertyImages": "Property Images",
+                        "uploadImages": "Upload Images",
+                        "noImagesUploaded": "No images uploaded yet",
+                        "clickToUploadImages": "Click Upload Images to add property photos",
+                        "propertyVideos": "Property Videos",
+                        "uploadVideos": "Upload Videos",
+                        "noVideosUploaded": "No videos uploaded yet",
+                        "clickToUploadVideos": "Click Upload Videos to add property videos"
+                    },
+                    "stepLocation": {
+                        "title": "Location & Map",
+                        "latitude": "Latitude",
+                        "latitudePlaceholder": "Enter latitude",
+                        "longitude": "Longitude",
+                        "longitudePlaceholder": "Enter longitude",
+                        "getLocation": "Get Current Location",
+                        "mapPreview": "Map Preview",
+                        "coordinates": "Coordinates",
+                        "loadingMap": "Loading map...",
+                        "yourLocation": "Your Location"
+                    },
+                    "stepContactPublishing": {
+                        "title": "Contact & Publishing",
+                        "whatsAppNumber": "WhatsApp Number",
+                        "includeCountryCode": "Include country code (e.g., 05 for SA)",
+                        "propertySummary": {
+                            "propertySummarytitle": "Property Summary",
+                            "title": "Title:",
+                            "price": "Price:",
+                            "unitCategory": "Unit Category:",
+                            "unitName": "Unit Name:",
+                            "totalFloors": "Total Floors:",
+                            "expectedAnnualRent": "Expected Annual Rent:",
+                            "features": "Features:",
+                            "projectedResale": "Projected Resale:",
+                            "warrantyInfo": "Warranty Information:",
+                            "expectedDeliveryDate": "Expected Delivery Date:",
+                            "expiryDate": "Expiry Date:",
+                            "location": "Location:",
+                            "areaSize": "Area Size:",
+                            "bedrooms": "Bedrooms:",
+                            "bathrooms": "Bathrooms:",
+                            "propertyType": "Property Type:",
+                            "images": "Images:",
+                            "videos": "Videos:",
+                            "notSpecified": "Not specified",
+                            "uploaded": "uploaded"
+                        }
+                    }
+                },
+                "btn": {
+                    "previous": "Previous",
+                    "next": "Next",
+                    "createProperty": "Create Property"
+                },
+                "validationErrors": {
+                    "title": "Validation Errors"
+                }
+            }
+        },
+        "updatePropertyPage": {
+            "title": "Update Property",
+            "description": "The Update Property Page allows you to update a property.",
+            "loading": "Loading property updates...",
+            "updateProperty": {
+                "steps": {
+                    "basicInfo": "Basic Information",
+                    "propertyDetails": "Property Details",
+                    "propertyMedia": "Property Media",
+                    "location": "Location / Map",
+                    "contactPublishing": "Contact & Publishing"
+                },
+                "btn": {
+                    "previous": "Previous",
+                    "next": "Next",
+                    "updateProperty": "Update Property"
+                },
+                "validationErrors": {
+                    "title": "Validation Errors"
+                }
+            }
+        }
+    },
+    "BlogPages": {
+        "blogsListPage": {
+            "title": "Blog List Page",
+            "description": "The Blog List Page displays a list of blogs with key details for easy browsing.",
+            "navigateCreateBlog": {
+                "createBlogBtn": "+ Create Blog"
+            },
+            "blogTable": {
+                "title": "Blog Table",
+                "searchPlaceholder": "Search blog...",
+                "blogHeader": {
+                    "id": "ID",
+                    "title": "Title",
+                    "publishedAt": "Published At",
+                    "published": "Published",
+                    "actions": "Actions",
+                    "editTooltip": "Edit Blog",
+                    "viewTooltip": "View Blog",
+                    "blogDelete": {
+                        "title": "Delete the Blog",
+                        "description": "Are you sure you want to delete this #{id} blog?"
+                    }
+                }
+            }
+        },
+        "blogDetailPage": {
+            "title": "Blog Detail Page",
+            "description": "The Blog Detail Page displays the details of a blog with key details.",
+            "loading": "Loading blog details..."
+        },
+        "blogPreviewCard": {
+            "preview": "Preview",
+            "title": "Your Blog Title",
+            "coverImagePreview": "Cover Image Preview",
+            "yourBlogContentWillAppearHere": "Your blog content will appear here",
+            "thisPostWillBePublished": "This post will be published",
+            "thisPostWillBeSavedAsDraft": "This post will be saved as draft"
+        },
+        "createBlogPage": {
+            "title": "Create Blog Page",
+            "description": "The Create Blog Page allows you to create a new blog.",
+            "loading": "Loading blog creation...",
+            "form": {
+                "title": "Title",
+                "titlePlaceholder": "Enter blog title",
+                "content": "Content",
+                "contentPlaceholder": "Enter blog content",
+                "coverImage": "Cover Image",
+                "currentImage": "Current Image",
+                "noFileChosen": "No file chosen",
+                "isPublished": "Is Published"
+            },
+            "btn": {
+                "createBlog": "Create Blog"
+            }
+        },
+        "updateBlogPage": {
+            "title": "Update Blog Page",
+            "description": "The Update Blog Page allows you to update a blog.",
+            "loading": "Loading blog updates...",
+            "form": {
+                "title": "Title",
+                "titlePlaceholder": "Enter blog title",
+                "content": "Content",
+                "contentPlaceholder": "Enter blog content",
+                "coverImage": "Cover Image",
+                "currentImage": "Current Image",
+                "noFileChosen": "No file chosen",
+                "isPublished": "Is Published"
+            },
+            "btn": {
+                "updateBlog": "Update Blog"
+            }
+        }
+    },
+    "LeadPages": {
+        "leadListPage": {
+            "title": "Lead List Page",
+            "description": "The Lead List Page displays a list of leads with key details for easy browsing.",
+            "leadTable": {
+                "title": "Lead Table",
+                "searchPlaceholder": "Search lead...",
+                "leadHeader": {
+                    "id": "ID",
+                    "propertyId": "Property ID",
+                    "fullName": "Full Name",
+                    "email": "Email",
+                    "phone": "Phone",
+                    "message": "Message",
+                    "status": "Status",
+                    "actions": "Actions",
+                    "viewTooltip": "View Lead",
+                    "leadToast": {
+                        "statusUpdated": "Status updated successfully",
+                        "statusUpdateFailed": "Failed to update status"
+                    }
+                }
+            }
+        },
+        "leadDetailPage": {
+            "title": "Lead Detail Page",
+            "description": "The Lead Detail Page displays the details of a lead with key details.",
+            "loading": "Loading lead details...",
+            "leadDetails": {
+                "basicInformationCard": {
+                    "title": "Lead Information",
+                    "infoCard": {
+                        "title": "ID",
+                        "fullName": "Full Name",
+                        "email": "Email",
+                        "phone": "Phone",
+                        "propertyId": "Property ID",
+                        "status": "Status",
+                        "message": "Message"
+                    }
+                }
+            }
+        }
+    },
+    "MaintenancePages": {
+        "maintenanceListPage": {
+            "title": "Maintenance List Page",
+            "description": "The Maintenance List Page displays all available maintenance requests with key details for easy browsing.",
+            "navigateCreateMaintenance": {
+                "createMaintenanceBtn": "+ Create Request"
+            },
+            "maintenanceTable": {
+                "title": "Maintenance Table",
+                "searchPlaceholder": "Search maintenance...",
+                "maintenanceHeader": {
+                    "id": "ID",
+                    "leadId": "Lead ID",
+                    "description": "Description",
+                    "status": "Status",
+                    "createdAt": "Created At",
+                    "isActive": "Active",
+                    "published": "Published",
+                    "draft": "Draft",
+                    "actions": "Actions",
+                    "editTooltip": "Edit Maintenance Request",
+                    "viewTooltip": "View Maintenance Request",
+                    "maintenanceDelete": {
+                        "title": "Delete the Maintenance Request",
+                        "description": "Are you sure you want to delete this #{id} maintenance request?"
+                    },
+                    "maintenanceToast": {
+                        "statusUpdated": "Status updated successfully",
+                        "statusUpdateFailed": "Failed to update status"
+                    }
+                }
+            }
+        },
+        "maintenanceDetailPage": {
+            "title": "Maintenance Detail Page",
+            "description": "The Maintenance Detail Page displays the details of a maintenance request with key details.",
+            "loading": "Loading maintenance details...",
+            "maintenanceDetails": {
+                "basicInformationCard": {
+                    "title": "Maintenance Information",
+                    "infoCard": {
+                        "id": "ID",
+                        "leadId": "Lead ID",
+                        "status": "Status",
+                        "description": "Description",
+                        "images&Videos": "Images & Videos"
+                    }
+                }
+            }
+        },
+        "createMaintenanceRequestPage": {
+            "title": "Create Maintenance Request Page",
+            "description": "The Create Maintenance Request Page allows you to create a new maintenance request.",
+            "loading": "Loading maintenance request creation...",
+            "createMaintenanceRequest": {
+                "form": {
+                    "leadId": "Lead ID",
+                    "leadIdPlaceholder": "Enter lead ID",
+                    "description": "Description",
+                    "descriptionPlaceholder": "Enter description",
+                    "requestImages": "Request Images",
+                    "uploadImages": "Upload Images",
+                    "noImagesUploaded": "No images uploaded yet",
+                    "clickToUploadImages": "Click Upload Images to add request photos",
+                    "requestVideo": "Request Video",
+                    "uploadVideo": "Upload Video",
+                    "noVideoUploaded": "No video uploaded yet",
+                    "clickToUploadVideo": "Click Upload Video to add request video"
+                },
+                "btn": {
+                    "createRequest": "Create Request"
+                }
+            }
+        },
+        "updateMaintenanceRequestPage": {
+            "title": "Update Maintenance Request Page",
+            "description": "The Update Maintenance Request Page allows you to update a maintenance request.",
+            "loading": "Loading maintenance request updates...",
+            "form": {
+                "leadId": "Lead ID",
+                "leadIdPlaceholder": "Enter lead ID",
+                "description": "Description",
+                "descriptionPlaceholder": "Enter description",
+                "requestImages": "Request Images",
+                "uploadImages": "Upload Images",
+                "noImagesUploaded": "No images uploaded yet",
+                "clickToUploadImages": "Click Upload Images to add request photos",
+                "requestVideo": "Request Video",
+                "uploadVideo": "Upload Video",
+                "noVideoUploaded": "No video uploaded yet",
+                "clickToUploadVideo": "Click Upload Video to add request video"
+            },
+            "btn": {
+                "updateRequest": "Update Request"
+            }
+        }
+    },
+    "UserPages": {
+        "userListPage": {
+            "title": "User List Page",
+            "description": "The User List Page displays all available users with key details for easy browsing.",
+            "navigateCreateUser": {
+                "createUserBtn": "+ Create User"
+            },
+            "userTable": {
+                "title": "User Table",
+                "searchPlaceholder": "Search user...",
+                "userHeader": {
+                    "id": "ID",
+                    "firstName": "First Name",
+                    "lastName": "Last Name",
+                    "email": "Email",
+                    "role": "Role",
+                    "isActive": "Active",
+                    "active": "Active",
+                    "inactive": "Inactive",
+                    "actions": "Actions",
+                    "editTooltip": "Edit User",
+                    "viewTooltip": "View User"
+                }
+            }
+        },
+        "userDetailPage": {
+            "title": "User Detail Page",
+            "description": "The User Detail Page displays the details of a user with key details.",
+            "loading": "Loading user details...",
+            "userDetails": {
+                "basicInformationCard": {
+                    "title": "User Information",
+                    "infoCard": {
+                        "id": "ID",
+                        "firstName": "First Name",
+                        "lastName": "Last Name",
+                        "email": "Email",
+                        "role": "Role",
+                        "status": "Status",
+                        "active": "Active",
+                        "inactive": "Inactive",
+                        "accountSummary": "Account Summary",
+                        "fullName": "Full Name",
+                        "emailAddress": "Email Address"
+                    }
+                }
+            }
+        },
+        "createUserPage": {
+            "title": "Create New User",
+            "description": "The Create New User Page allows you to create a new user.",
+            "loading": "Loading user creation...",
+            "form": {
+                "firstName": "First Name",
+                "firstNamePlaceholder": "Enter first name",
+                "lastName": "Last Name",
+                "lastNamePlaceholder": "Enter last name",
+                "email": "Email",
+                "emailPlaceholder": "Enter email",
+                "password": "Password",
+                "passwordPlaceholder": "Enter password",
+                "confirmPassword": "Confirm Password",
+                "confirmPasswordPlaceholder": "Confirm password",
+                "role": "Role",
+                "rolePlaceholder": "Select role"
+            },
+            "btn": {
+                "cancel": "Cancel",
+                "creating": "Creating...",
+                "createUser": "Create User"
+            }
+        },
+        "updateUserPage": {
+            "title": "Update User",
+            "description": "The Update User Page allows you to update a user.",
+            "loading": "Loading user updates...",
+            "form": {
+                "firstName": "First Name",
+                "firstNamePlaceholder": "Enter first name",
+                "lastName": "Last Name",
+                "lastNamePlaceholder": "Enter last name",
+                "email": "Email",
+                "emailPlaceholder": "Enter email",
+                "role": "Role",
+                "rolePlaceholder": "Select role"
+            },
+            "btn": {
+                "cancel": "Cancel",
+                "updating": "Updating...",
+                "updateUser": "Update User"
+            }
+        }
+    },
+    "ContactPages": {
+        "contactListPage": {
+            "title": "Contact List Page",
+            "description": "The Contact List Page displays all available contacts with key details for easy browsing.",
+            "contactTable": {
+                "title": "Contact Table",
+                "searchPlaceholder": "Search contact...",
+                "contactHeader": {
+                    "id": "ID",
+                    "fullName": "Full Name",
+                    "email": "Email",
+                    "phone": "Phone",
+                    "subject": "Subject",
+                    "propertyType": "Property Type",
+                    "location": "Location",
+                    "urgent": "Urgent",
+                    "status": "Status",
+                    "createdAt": "Created At",
+                    "actions": "Actions",
+                    "editTooltip": "Edit Contact",
+                    "viewTooltip": "View Contact",
+                    "contactToast": {
+                        "statusUpdated": "Status updated successfully",
+                        "statusUpdateFailed": "Failed to update status"
+                    },
+                    "contactDelete": {
+                        "title": "Delete the Contact",
+                        "description": "Are you sure you want to delete this #{id} Contact?"
+                    }
+                }
+            }
+        },
+        "contactDetailPage": {
+            "title": "Contact Detail Page",
+            "description": "The Contact Detail Page displays the details of a contact with key details.",
+            "loading": "Loading contact details...",
+            "contactDetails": {
+                "basicInformationCard": {
+                    "title": "Basic Information",
+                    "infoCard": {
+                        "id": "ID",
+                        "fullName": "Full Name",
+                        "email": "Email",
+                        "phone": "Phone",
+                        "propertyId": "Property ID",
+                        "status": "Status",
+                        "urgent": "Urgent"
+                    }
+                },
+                "propertyInformationCard": {
+                    "title": "Property Information",
+                    "infoCard": {
+                        "subject": "Subject",
+                        "propertyType": "Property Type",
+                        "location": "Location",
+                        "budget": "Budget"
+                    }
+                },
+                "contactPreferencesCard": {
+                    "title": "Contact Preferences",
+                    "infoCard": {
+                        "preferredContactMethod": "Preferred Contact Method",
+                        "preferredContactTime": "Preferred Contact Time"
+                    }
+                },
+                "messageDetailsCard": {
+                    "title": "Message Details",
+                    "infoCard": {
+                        "message": "Message"
+                    }
+                },
+                "timestampsCard": {
+                    "title": "Timestamps",
+                    "infoCard": {
+                        "createdAt": "Created At",
+                        "updatedAt": "Updated At"
+                    }
+                }
+            }
+        }
+    },
+    "ProfilePages": {
+        "changePasswordPage": {
+            "title": "Change Password Page",
+            "description": "The Change Password Page allows you to change your password.",
+            "loading": "Loading password change...",
+            "back": "Back",
+            "form": {
+                "currentPassword": "Current Password",
+                "currentPasswordPlaceholder": "Enter current password",
+                "newPassword": "New Password",
+                "newPasswordPlaceholder": "Enter new password",
+                "confirmPassword": "Confirm New Password",
+                "confirmPasswordPlaceholder": "Confirm new password"
+            },
+            "btn": {
+                "cancel": "Cancel",
+                "updating": "Updating...",
+                "updatePassword": "Update Password"
+            }
+        }
+    },
+    "ProfileMenu": {
+        "changePassword": "Change Password",
+        "signOut": "Sign Out"
+    }
+}

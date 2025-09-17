@@ -1,0 +1,924 @@
+{
+    "landingPage": {
+        "title": "مرحبًا بكم في موقع إدارة صادف"
+    },
+    "AuthHeader": {
+        "login": "تسجيل الدخول",
+        "signup": "تسجيل الإنضمام"
+    },
+    "SignInPage": {
+        "title": {
+            "line1": "مرحبًا بعودتك!",
+            "line2": "سجل الدخول باستخدام بياناتك."
+        },
+        "form": {
+            "email": "البريد الإلكتروني",
+            "emailPlaceholder": "أدخل بريدك الإلكتروني",
+            "password": "كلمة المرور",
+            "passwordPlaceholder": "أدخل كلمة المرور",
+            "submit": "تسجيل الدخول",
+            "rememberMe": "تذكرني",
+            "forgotPassword": "نسيت كلمة المرور",
+            "loginBtn": "تسجيل الدخول"
+        }
+    },
+    "SignUpPage": {
+        "title": {
+            "line1": "مرحبًا!",
+            "line2": "انضم إلينا اليوم! احصل على الفوائد الخاصة وابقى على اطلاع على التحديثات."
+        },
+        "form": {
+            "firstName": "الاسم الأول",
+            "firstNamePlaceholder": "أدخل اسمك الأول",
+            "lastName": "الاسم الأخير",
+            "lastNamePlaceholder": "أدخل اسمك الأخير",
+            "email": "البريد الإلكتروني",
+            "emailPlaceholder": "أدخل بريدك الإلكتروني",
+            "password": "كلمة المرور",
+            "passwordPlaceholder": "أدخل كلمة المرور",
+            "confirmPassword": "تأكيد كلمة المرور",
+            "confirmPasswordPlaceholder": "تأكيد كلمة المرور",
+            "role": "الدور",
+            "rolePlaceholder": "اختر الدور",
+            "signupBtn": "تسجيل الإنضمام"
+        }
+    },
+    "ForgotPasswordPage": {
+        "title": {
+            "line1": "هل تواجه مشكلة في تسجيل الدخول؟",
+            "line2": "إعادة تعيين كلمة المرور."
+        },
+        "form": {
+            "email": "البريد الإلكتروني",
+            "emailPlaceholder": "أدخل بريدك الإلكتروني",
+            "resetButton": "إعادة تعيين كلمة المرور"
+        },
+        "footer": {
+            "text1": "لا تريد إعادة التعيين؟",
+            "text2": "تسجيل الدخول"
+        }
+    },
+    "ResetPasswordPage": {
+        "title": {
+            "line1": "إعادة تعيين كلمة المرور",
+            "line2": "أدخل كلمة المرور الجديدة."
+        },
+        "form": {
+            "newPassword": "كلمة المرور الجديدة",
+            "newPasswordPlaceholder": "أدخل كلمة المرور الجديدة",
+            "confirmPassword": "تأكيد كلمة المرور",
+            "confirmPasswordPlaceholder": "تأكيد كلمة المرور",
+            "resetButton": "إعادة تعيين كلمة المرور",
+            "description": {
+                "line1": "أدخل كلمة المرور الجديدة."
+            }
+        }
+    },
+    "SideMenu": {
+        "dashboard": "لوحة التحكم",
+        "property": {
+            "title": "العقارات",
+            "submenu": {
+                "list": "قائمة العقارات",
+                "add": "إضافة عقار"
+            }
+        },
+        "blog": {
+            "title": "المدونة",
+            "submenu": {
+                "list": "قائمة المدونات",
+                "add": "إضافة مدونة"
+            }
+        },
+        "lead": {
+            "title": "العملاء المحتملون",
+            "submenu": {
+                "list": "قائمة العملاء المحتملين"
+            }
+        },
+        "maintenanceRequest": {
+            "title": "طلبات الصيانة",
+            "submenu": {
+                "list": "قائمة الصيانة",
+                "add": "إضافة طلب"
+            }
+        },
+        "userManagement": {
+            "title": "إدارة المستخدمين",
+            "submenu": {
+                "list": "قائمة المستخدمين",
+                "add": "إضافة مستخدم"
+            }
+        },
+        "contact": {
+            "title": "جهات الاتصال",
+            "submenu": {
+                "list": "قائمة جهات الاتصال"
+            }
+        }
+    },
+    "loading": {
+        "title": "جاري التحميل..."
+    },
+    "Dashboard": {
+        "title": "لوحة التحكم",
+        "description": "مرحبًا بك في لوحة التحكم لموقع إدارة صادف",
+        "propertyAnalytics": {
+            "title": "تحليلات العقارات",
+            "cards": {
+                "totalProperties": "العقارات الكلية",
+                "activeProperties": "العقارات النشطة",
+                "expiredProperties": "العقارات المنتهية",
+                "pending": "قيد الانتظار",
+                "approved": "موافق عليه",
+                "sold": "مباع",
+                "rejected": "مرفوض",
+                "archived": "مؤرشف"
+            },
+            "unitCategoriesCard": {
+                "title": "فئات الوحدات"
+            },
+            "financialOverviewCard": {
+                "title": "ملخص المالي",
+                "content": {
+                    "totalExpectedAnnualRent": "إيجارات متوقعة سنويا",
+                    "totalProjectedResaleValue": "قيمة البيع المتوقعة",
+                    "propertiesWithInvestmentData": "العقارات التي لديها بيانات الاستثمار",
+                    "listedThisWeek": "مدونة هذا الأسبوع"
+                }
+            }
+        },
+        "leadAnalytics": {
+            "title": "تحليلات العملاء المحتملين",
+            "cards": {
+                "totalLeads": "العملاء المحتملين الكلي",
+                "leadsThisMonth": "العملاء المحتملين الشهري",
+                "activeLeads": "العملاء المحتملين النشطين",
+                "newLeads": "العملاء المحتملين الجدد",
+                "contacted": "العملاء المحتملين المتواصلين",
+                "inDiscussion": "العملاء المحتملين في المناقشة",
+                "visitScheduled": "العملاء المحتملين المجددين",
+                "converted": "العملاء المحتملين المحولين",
+                "rejected": "العملاء المحتملين المرفوضين"
+            },
+            "leadDistributionCard": {
+                "title": "توزيع العملاء المحتملين",
+                "new": "جدد",
+                "contacted": "متواصل",
+                "inDiscussion": "في المناقشة",
+                "visitScheduled": "مجدد",
+                "converted": "محول",
+                "rejected": "مرفوض"
+            },
+            "leadSummaryCard": {
+                "title": "ملخص العملاء المحتملين",
+                "content": {
+                    "totalLeads": "العملاء المحتملين الكلي",
+                    "activeLeads": "العملاء المحتملين النشطين",
+                    "converted": "العملاء المحتملين المحولين"
+                }
+            }
+        },
+        "maintenanceRequestAnalytics": {
+            "title": "تحليلات طلبات الصيانة",
+            "cards": {
+                "totalRequests": "إجمالي الطلبات",
+                "thisMonth": "هذا الشهر",
+                "pending": "قيد الانتظار",
+                "inProgress": "قيد التنفيذ",
+                "resolved": "منتهي",
+                "rejected": "مرفوض"
+            },
+            "requestStatusDistributionCard": {
+                "title": "توزيع حالات الطلبات",
+                "pending": "قيد الانتظار",
+                "inProgress": "قيد التنفيذ",
+                "resolved": "منتهي",
+                "rejected": "مرفوض"
+            },
+            "maintenanceRequestSummaryCard": {
+                "title": "ملخص طلبات الصيانة",
+                "content": {
+                    "totalRequests": "إجمالي الطلبات",
+                    "pending": "قيد الانتظار",
+                    "resolved": "منتهي"
+                }
+            }
+        },
+        "contactAnalytics": {
+            "title": "تحليلات جهات الاتصال",
+            "cards": {
+                "totalContacts": "إجمالي الجهات المتواصلة",
+                "newContacts": "الجهات المتواصلة الجددة",
+                "inProgress": "الجهات المتواصلة القيد التنفيذ",
+                "urgentContacts": "الجهات المتواصلة المهمة"
+            },
+            "contactsbyTypeCard": {
+                "title": "جهات الاتصال بنوع"
+            },
+            "contactsbyStatusCard": {
+                "title": "جهات الاتصال بحالة",
+                "new": "جدد",
+                "inProgress": "قيد التنفيذ",
+                "contacted": "متواصل",
+                "responded": "متواصل",
+                "scheduled": "مجدد",
+                "completed": "منتهي",
+                "cancelled": "ملغي",
+                "spam": "مهمل"
+            },
+            "recentContactsCard": {
+                "title": "الجهات المتواصلة الأخيرة"
+            },
+            "noDataAvailable": "لا يوجد بيانات"
+        }
+    },
+    "tableFooter": {
+        "pages": "الصفحات",
+        "of": "من",
+        "rowsPerPage": "عدد الصفوف في الصفحة"
+    },
+    "DeletePopover": {
+        "yes": "نعم",
+        "no": "لا",
+        "deleteItem": "حذف العنصر"
+    },
+    "PropertyPages": {
+        "propertyListPage": {
+            "title": "قائمة العقارات",
+            "description": "يعرض قائمة العقارات جميع العقارات المتاحة مع التفاصيل الرئيسية للتصفح السهل.",
+            "navigateCreateProperty": {
+                "createPropertyBtn": "+ إضافة عقار"
+            },
+            "propertyFiltersCard": {
+                "title": "تصفية العقارات",
+                "city": "المدينة",
+                "cityPlaceholder": "اختر المدينة",
+                "location": "الموقع",
+                "locationPlaceholder": "أدخل الموقع",
+                "status": "الحالة",
+                "statusPlaceholder": "اختر الحالة",
+                "propertyType": "نوع العقار",
+                "propertyTypePlaceholder": "اختر نوع العقار",
+                "applyFilter": "تطبيق التصفية",
+                "clearAllFilter": "مسح كل التصفيات"
+            },
+            "propertyTable": {
+                "title": "جدول العقارات",
+                "searchPlaceholder": "ابحث عن عقار...",
+                "propertyHeader": {
+                    "id": "الرقم",
+                    "title": "العنوان",
+                    "price": "السعر",
+                    "city": "المدينة",
+                    "location": "الموقع",
+                    "areaSize": "المساحة",
+                    "bedrooms": "الغرف",
+                    "bathrooms": "الحمامات",
+                    "status": "الحالة",
+                    "propertyType": "نوع العقار",
+                    "expiryDate": "تاريخ الانتهاء",
+                    "investorOnly": "فقط المستثمرين",
+                    "actions": "الإجراءات",
+                    "saving": "الحفظ...",
+                    "save": "حفظ",
+                    "editTooltip": "تعديل العقار",
+                    "viewTooltip": "عرض العقار",
+                    "propertyDelete": {
+                        "title": "حذف العقار",
+                        "description": "هل أنت متأكد أنك تريد حذف هذا #{id} عقار؟"
+                    },
+                    "propertyToast": {
+                        "statusUpdated": "تم تحديث الحالة بنجاح",
+                        "statusUpdateFailed": "فشل تحديث الحالة"
+                    }
+                }
+            }
+        },
+        "propertyDetailPage": {
+            "title": "تفاصيل العقار",
+            "description": "يعرض تفاصيل العقار بالتفاصيل الرئيسية.",
+            "loading": "جاري تحميل تفاصيل العقار...",
+            "propertyDetails": {
+                "basicInformationCard": {
+                    "title": "المعلومات الأساسية",
+                    "infoCard": {
+                        "title": "العنوان",
+                        "type": "نوع العقار",
+                        "unitCategory": "فئة الوحدة",
+                        "city": "المدينة",
+                        "location": "الموقع",
+                        "areaSize": "المساحة",
+                        "status": "الحالة",
+                        "investorOnly": "فقط المستثمرين"
+                    }
+                },
+                "financialInformationCard": {
+                    "title": "المعلومات المالية",
+                    "infoCard": {
+                        "price": "السعر",
+                        "projectedResaleValue": "قيمة البيع المتوقعة",
+                        "expectedAnnualRent": "إيجارات متوقعة سنويا",
+                        "warrantyInfo": "معلومات الضمان",
+                        "expectedDeliveryDate": "تاريخ التسليم المتوقع",
+                        "expiryDate": "تاريخ الانتهاء"
+                    }
+                },
+                "unitDetailsCard": {
+                    "title": "تفاصيل الوحدة",
+                    "infoCard": {
+                        "unitName": "اسم الوحدة",
+                        "bedrooms": "الغرف",
+                        "bathrooms": "الحمامات",
+                        "totalFloors": "عدد الأدوار"
+                    }
+                },
+                "locationContactCard": {
+                    "title": "الموقع والاتصال",
+                    "infoCard": {
+                        "latitude": "العرض",
+                        "longitude": "الطول",
+                        "whatsAppNumber": "رقم الواتساب"
+                    }
+                },
+                "featuresCard": {
+                    "title": "الميزات",
+                    "noFeatures": "لا توجد ميزات"
+                },
+                "descriptionCard": {
+                    "title": "الوصف"
+                },
+                "imagesVideosCard": {
+                    "title": "الصور والفيديوهات"
+                },
+                "timelineCard": {
+                    "title": "الجدول الزمني للعقار",
+                    "actionTakenBy": "تم الإجراء بواسطة",
+                    "noTimeline": "لا توجد بيانات زمنية متاحة لهذا العقار."
+                }
+            }
+        },
+        "createPropertyPage": {
+            "title": "إنشاء عقار",
+            "description": "يسمح هذا الصفحة بإنشاء العقار الجديد.",
+            "loading": "جاري إنشاء العقار...",
+            "createProperty": {
+                "steps": {
+                    "basicInfo": "المعلومات الأساسية",
+                    "propertyDetails": "تفاصيل العقار",
+                    "propertyMedia": "الوسائط المرئية",
+                    "location": "الموقع / الخريطة",
+                    "contactPublishing": "الاتصال والنشر"
+                },
+                "form": {
+                    "stepBasicInformation": {
+                        "title": "المعلومات الأساسية",
+                        "propertyTitle": "اسم العقار",
+                        "propertyTitlePlaceholder": "أدخل اسم العقار",
+                        "price": "السعر",
+                        "pricePlaceholder": "أدخل السعر",
+                        "propertyType": "نوع العقار",
+                        "propertyTypePlaceholder": "اختر نوع العقار",
+                        "unitCategory": "فئة الوحدة",
+                        "unitCategoryPlaceholder": "اختر فئة الوحدة",
+                        "city": "المدينة",
+                        "cityPlaceholder": "اختر المدينة",
+                        "location": "الموقع",
+                        "locationPlaceholder": "أدخل الموقع",
+                        "areaSize": "المساحة",
+                        "areaSizePlaceholder": "أدخل المساحة",
+                        "bedrooms": "الغرف",
+                        "bedroomsPlaceholder": "أدخل عدد الغرف",
+                        "bathrooms": "الحمامات",
+                        "bathroomsPlaceholder": "أدخل عدد الحمامات",
+                        "unitName": "اسم الوحدة",
+                        "unitNamePlaceholder": "أدخل اسم الوحدة",
+                        "totalFloors": "عدد الأدوار",
+                        "totalFloorsPlaceholder": "عدد الأدوار",
+                        "investorOnly": "عقار للمستثمرين فقط",
+                        "basicInfoSchema": {
+                            "title": "العنوان مطلوب",
+                            "titleMax": "العنوان يجب أن يكون أقل من 200 حرف",
+                            "price": "السعر يجب أن يكون أكبر من 0",
+                            "priceMin": "السعر يجب أن يكون رقم موجب",
+                            "city": "المدينة مطلوبة",
+                            "location": "الموقع مطلوب",
+                            "areaSize": "المساحة يجب أن تكون رقم موجب",
+                            "areaSizeMin": "المساحة يجب أن تكون رقم موجب"
+                        }
+                    },
+                    "stepPropertyDetails": {
+                        "title": "تفاصيل العقار",
+                        "description": "الوصف",
+                        "features": "الميزات",
+                        "featuresPlaceholder": "اختر الميزات",
+                        "projectedResale": "قيمة البيع المتوقعة",
+                        "projectedResalePlaceholder": "أدخل قيمة البيع المتوقعة",
+                        "expectedAnnualRent": "إيجارات متوقعة سنويا",
+                        "expectedAnnualRentPlaceholder": "أدخل إيجارات متوقعة سنويا",
+                        "warrantyInformation": "معلومات الضمان",
+                        "warrantyInformationPlaceholder": "أدخل معلومات الضمان",
+                        "expectedDeliveryDate": "تاريخ التسليم المتوقع",
+                        "expiryDate": "تاريخ الانتهاء"
+                    },
+                    "stepPropertyMedia": {
+                        "title": "الوسائط المرئية",
+                        "propertyImages": "الصور المرئية",
+                        "uploadImages": "رفع الصور",
+                        "noImagesUploaded": "لا توجد صور مرفوعة بعد",
+                        "clickToUploadImages": "اضافة الصور",
+                        "propertyVideos": "الفيديوهات",
+                        "uploadVideos": "رفع الفيديوهات",
+                        "noVideosUploaded": "لا توجد فيديوهات مرفوعة بعد",
+                        "clickToUploadVideos": "اضافة الفيديوهات"
+                    },
+                    "stepLocation": {
+                        "title": "الموقع والخريطة",
+                        "latitude": "العرض",
+                        "latitudePlaceholder": "أدخل العرض",
+                        "longitude": "الطول",
+                        "longitudePlaceholder": "أدخل الطول",
+                        "getLocation": "الحصول على الموقع الحالي",
+                        "mapPreview": "معاينة الخريطة",
+                        "coordinates": "الإحداثيات",
+                        "loadingMap": "جاري تحميل الخريطة...",
+                        "yourLocation": "الموقع الحالي"
+                    },
+                    "stepContactPublishing": {
+                        "title": "الاتصال والنشر",
+                        "whatsAppNumber": "رقم الواتساب",
+                        "includeCountryCode": "تضمين رمز الدولة (مثل 05 للمملكة العربية السعودية)",
+                        "propertySummary": {
+                            "propertySummarytitle": "ملخص العقار",
+                            "title": "العنوان:",
+                            "price": "السعر:",
+                            "unitCategory": "فئة الوحدة:",
+                            "unitName": "اسم الوحدة:",
+                            "totalFloors": "عدد الأدوار:",
+                            "expectedAnnualRent": "إيجارات متوقعة سنويا:",
+                            "features": "الميزات:",
+                            "projectedResale": "قيمة البيع المتوقعة:",
+                            "warrantyInfo": "معلومات الضمان:",
+                            "expectedDeliveryDate": "تاريخ التسليم المتوقع:",
+                            "expiryDate": "تاريخ الانتهاء:",
+                            "location": "الموقع:",
+                            "areaSize": "المساحة:",
+                            "bedrooms": "الغرف:",
+                            "bathrooms": "الحمامات:",
+                            "propertyType": "نوع العقار:",
+                            "images": "الصور:",
+                            "videos": "الفيديوهات:",
+                            "notSpecified": "لم يتم تحديد",
+                            "uploaded": "مرفوع"
+                        }
+                    }
+                },
+                "btn": {
+                    "previous": "السابق",
+                    "next": "التالي",
+                    "createProperty": "إنشاء عقار"
+                },
+                "validationErrors": {
+                    "title": "أخطاء التحقق"
+                }
+            }
+        },
+        "updatePropertyPage": {
+            "title": "تحديث العقار",
+            "description": "يسمح هذا الصفحة بتحديث العقار.",
+            "loading": "جاري تحديث العقار...",
+            "updateProperty": {
+                "steps": {
+                    "basicInfo": "المعلومات الأساسية",
+                    "propertyDetails": "تفاصيل العقار",
+                    "propertyMedia": "الوسائط المرئية",
+                    "location": "الموقع / الخريطة",
+                    "contactPublishing": "الاتصال والنشر"
+                },
+                "btn": {
+                    "previous": "السابق",
+                    "next": "التالي",
+                    "updateProperty": "تحديث العقار"
+                },
+                "validationErrors": {
+                    "title": "أخطاء التحقق"
+                }
+            }
+        }
+    },
+    "BlogPages": {
+        "blogsListPage": {
+            "title": "قائمة المدونات",
+            "description": "يعرض قائمة المدونات جميع المدونات المتاحة مع التفاصيل الرئيسية للتصفح السهل.",
+            "navigateCreateBlog": {
+                "createBlogBtn": "+ إنشاء مدونة"
+            },
+            "blogTable": {
+                "title": "جدول المدونات",
+                "searchPlaceholder": "ابحث عن مدونة...",
+                "blogHeader": {
+                    "id": "الرقم",
+                    "title": "العنوان",
+                    "publishedAt": "تاريخ النشر",
+                    "published": "المنشئ",
+                    "actions": "الإجراءات",
+                    "editTooltip": "تعديل المدونة",
+                    "viewTooltip": "عرض المدونة",
+                    "blogDelete": {
+                        "title": "حذف المدونة",
+                        "description": "هل أنت متأكد أنك تريد حذف هذا #{id} مدونة؟"
+                    }
+                }
+            }
+        },
+        "blogDetailPage": {
+            "title": "تفاصيل المدونة",
+            "description": "يعرض تفاصيل المدونة بالتفاصيل الرئيسية.",
+            "loading": "جاري تحميل تفاصيل المدونة..."
+        },
+        "blogPreviewCard": {
+            "preview": "معاينة",
+            "title": "عنوان المدونة",
+            "coverImagePreview": "معاينة صورة الغلاف",
+            "yourBlogContentWillAppearHere": "محتوى المدونة سيظهر هنا",
+            "thisPostWillBePublished": "سيتم نشر هذه المدونة",
+            "thisPostWillBeSavedAsDraft": "سيتم حفظ هذه المدونة كمسودة"
+        },
+        "createBlogPage": {
+            "title": "إنشاء مدونة",
+            "description": "يسمح هذا الصفحة بإنشاء المدونة الجديدة.",
+            "loading": "جاري إنشاء المدونة...",
+            "form": {
+                "title": "العنوان",
+                "titlePlaceholder": "أدخل عنوان المدونة",
+                "content": "المحتوى",
+                "contentPlaceholder": "أدخل محتوى المدونة",
+                "coverImage": "صورة الغلاف",
+                "currentImage": "صورة المعاينة",
+                "noFileChosen": "لم يتم اختيار أي ملف",
+                "isPublished": "المنشئ"
+            },
+            "btn": {
+                "createBlog": "إنشاء مدونة"
+            }
+        },
+        "updateBlogPage": {
+            "title": "تحديث المدونة",
+            "description": "يسمح هذا الصفحة بتحديث المدونة.",
+            "loading": "جاري تحديث المدونة...",
+            "form": {
+                "title": "العنوان",
+                "titlePlaceholder": "أدخل عنوان المدونة",
+                "content": "المحتوى",
+                "contentPlaceholder": "أدخل محتوى المدونة",
+                "coverImage": "صورة الغلاف",
+                "currentImage": "صورة المعاينة",
+                "noFileChosen": "لم يتم اختيار أي ملف",
+                "isPublished": "المنشئ"
+            },
+            "btn": {
+                "updateBlog": "تحديث المدونة"
+            }
+        }
+    },
+    "LeadPages": {
+        "leadListPage": {
+            "title": "قائمة الطلبات",
+            "description": "يعرض قائمة الطلبات جميع الطلبات المتاحة مع التفاصيل الرئيسية للتصفح السهل.",
+            "leadTable": {
+                "title": "جدول الطلبات",
+                "searchPlaceholder": "ابحث عن طلب...",
+                "leadHeader": {
+                    "id": "الرقم",
+                    "propertyId": "رقم العقار",
+                    "fullName": "الاسم الكامل",
+                    "email": "البريد الإلكتروني",
+                    "phone": "الهاتف",
+                    "message": "الرسالة",
+                    "status": "الحالة",
+                    "actions": "الإجراءات",
+                    "viewTooltip": "عرض الطلب",
+                    "leadToast": {
+                        "statusUpdated": "تم تحديث الحالة بنجاح",
+                        "statusUpdateFailed": "فشل تحديث الحالة"
+                    }
+                }
+            }
+        },
+        "leadDetailPage": {
+            "title": "تفاصيل الطلب",
+            "description": "يعرض تفاصيل الطلب بالتفاصيل الرئيسية.",
+            "loading": "جاري تحميل تفاصيل الطلب...",
+            "leadDetails": {
+                "basicInformationCard": {
+                    "title": "معلومات الطلب",
+                    "infoCard": {
+                        "title": "الرقم",
+                        "fullName": "الاسم الكامل",
+                        "email": "البريد الإلكتروني",
+                        "phone": "الهاتف",
+                        "propertyId": "رقم العقار",
+                        "status": "الحالة",
+                        "message": "الرسالة"
+                    }
+                }
+            }
+        }
+    },
+    "MaintenancePages": {
+        "maintenanceListPage": {
+            "title": "قائمة الطلبات",
+            "description": "يعرض قائمة الطلبات جميع الطلبات المتاحة مع التفاصيل الرئيسية للتصفح السهل.",
+            "navigateCreateMaintenance": {
+                "createMaintenanceBtn": "+ إنشاء طلب"
+            },
+            "maintenanceTable": {
+                "title": "جدول الطلبات",
+                "searchPlaceholder": "ابحث عن طلب...",
+                "maintenanceHeader": {
+                    "id": "الرقم",
+                    "leadId": "رقم الطلب",
+                    "description": "الوصف",
+                    "status": "الحالة",
+                    "createdAt": "تاريخ الطلب",
+                    "isActive": "نشط",
+                    "published": "منشئ",
+                    "draft": "مسودة",
+                    "actions": "الإجراءات",
+                    "editTooltip": "تعديل طلب الصيانة",
+                    "viewTooltip": "عرض طلب الصيانة",
+                    "maintenanceDelete": {
+                        "title": "حذف طلب الصيانة",
+                        "description": "هل أنت متأكد أنك تريد حذف هذا #{id} طلب الصيانة؟"
+                    },
+                    "maintenanceToast": {
+                        "statusUpdated": "تم تحديث الحالة بنجاح",
+                        "statusUpdateFailed": "فشل تحديث الحالة"
+                    }
+                }
+            }
+        },
+        "maintenanceDetailPage": {
+            "title": "تفاصيل الطلب",
+            "description": "يعرض تفاصيل الطلب بالتفاصيل الرئيسية.",
+            "loading": "جاري تحميل تفاصيل الطلب...",
+            "maintenanceDetails": {
+                "basicInformationCard": {
+                    "title": "معلومات الطلب",
+                    "infoCard": {
+                        "id": "الرقم",
+                        "leadId": "رقم الطلب",
+                        "status": "الحالة",
+                        "description": "الوصف",
+                        "images&Videos": "الصور والفيديوهات"
+                    }
+                }
+            }
+        },
+        "createMaintenanceRequestPage": {
+            "title": "إنشاء طلب الصيانة",
+            "description": "يسمح هذا الصفحة بإنشاء طلب الصيانة.",
+            "loading": "جاري إنشاء طلب الصيانة...",
+            "createMaintenanceRequest": {
+                "form": {
+                    "leadId": "رقم الطلب",
+                    "leadIdPlaceholder": "أدخل رقم الطلب",
+                    "description": "الوصف",
+                    "descriptionPlaceholder": "أدخل الوصف",
+                    "requestImages": "الصور المطلوبة",
+                    "uploadImages": "رفع الصور",
+                    "noImagesUploaded": "لا توجد صور مرفوعة بعد",
+                    "clickToUploadImages": "اضافة الصور",
+                    "requestVideo": "الفيديو المطلوب",
+                    "uploadVideo": "رفع الفيديو",
+                    "noVideoUploaded": "لا توجد فيديوهات مرفوعة بعد",
+                    "clickToUploadVideo": "اضافة الفيديو"
+                },
+                "btn": {
+                    "createRequest": "إنشاء طلب"
+                }
+            }
+        },
+        "updateMaintenanceRequestPage": {
+            "title": "تحديث طلب الصيانة",
+            "description": "يسمح هذا الصفحة بتحديث طلب الصيانة.",
+            "loading": "جاري تحديث طلب الصيانة...",
+            "form": {
+                "leadId": "رقم الطلب",
+                "leadIdPlaceholder": "أدخل رقم الطلب",
+                "description": "الوصف",
+                "descriptionPlaceholder": "أدخل الوصف",
+                "requestImages": "الصور المطلوبة",
+                "uploadImages": "رفع الصور",
+                "noImagesUploaded": "لا توجد صور مرفوعة بعد",
+                "clickToUploadImages": "اضافة الصور",
+                "requestVideo": "الفيديو المطلوب",
+                "uploadVideo": "رفع الفيديو",
+                "noVideoUploaded": "لا توجد فيديوهات مرفوعة بعد",
+                "clickToUploadVideo": "اضافة الفيديو"
+            },
+            "btn": {
+                "updateRequest": "تحديث طلب"
+            }
+        }
+    },
+    "UserPages": {
+        "userListPage": {
+            "title": "قائمة المستخدمين",
+            "description": "يعرض قائمة المستخدمين جميع المستخدمين المتاحة مع التفاصيل الرئيسية للتصفح السهل.",
+            "navigateCreateUser": {
+                "createUserBtn": "+ إنشاء مستخدم"
+            },
+            "userTable": {
+                "title": "جدول المستخدمين",
+                "searchPlaceholder": "ابحث عن مستخدم...",
+                "userHeader": {
+                    "id": "الرقم",
+                    "firstName": "الاسم الأول",
+                    "lastName": "الاسم الأخير",
+                    "email": "البريد الإلكتروني",
+                    "role": "الدور",
+                    "isActive": "نشط",
+                    "active": "نشط",
+                    "inactive": "غير نشط",
+                    "actions": "الإجراءات",
+                    "editTooltip": "تعديل المستخدم",
+                    "viewTooltip": "عرض المستخدم"
+                }
+            }
+        },
+        "userDetailPage": {
+            "title": "تفاصيل المستخدم",
+            "description": "يعرض تفاصيل المستخدم بالتفاصيل الرئيسية.",
+            "loading": "جاري تحميل تفاصيل المستخدم...",
+            "userDetails": {
+                "basicInformationCard": {
+                    "title": "معلومات المستخدم",
+                    "infoCard": {
+                        "id": "الرقم",
+                        "firstName": "الاسم الأول",
+                        "lastName": "الاسم الأخير",
+                        "email": "البريد الإلكتروني",
+                        "role": "الدور",
+                        "status": "الحالة",
+                        "active": "نشط",
+                        "inactive": "غير نشط",
+                        "accountSummary": "ملخص الحساب",
+                        "fullName": "الاسم الكامل",
+                        "emailAddress": "البريد الإلكتروني"
+                    }
+                }
+            }
+        },
+        "createUserPage": {
+            "title": "إنشاء مستخدم جديد",
+            "description": "يسمح هذا الصفحة بإنشاء مستخدم جديد.",
+            "loading": "جاري إنشاء المستخدم...",
+            "form": {
+                "firstName": "الاسم الأول",
+                "firstNamePlaceholder": "أدخل الاسم الأول",
+                "lastName": "الاسم الأخير",
+                "lastNamePlaceholder": "أدخل الاسم الأخير",
+                "email": "البريد الإلكتروني",
+                "emailPlaceholder": "أدخل البريد الإلكتروني",
+                "password": "كلمة المرور",
+                "passwordPlaceholder": "أدخل كلمة المرور",
+                "confirmPassword": "تأكيد كلمة المرور",
+                "confirmPasswordPlaceholder": "أدخل كلمة المرور",
+                "role": "الدور",
+                "rolePlaceholder": "اختر الدور"
+            },
+            "btn": {
+                "cancel": "إلغاء",
+                "creating": "جاري إنشاء المستخدم...",
+                "createUser": "إنشاء مستخدم"
+            }
+        },
+        "updateUserPage": {
+            "title": "تحديث المستخدم",
+            "description": "يسمح هذا الصفحة بتحديث المستخدم.",
+            "loading": "جاري تحديث المستخدم...",
+            "form": {
+                "firstName": "الاسم الأول",
+                "firstNamePlaceholder": "أدخل الاسم الأول",
+                "lastName": "الاسم الأخير",
+                "lastNamePlaceholder": "أدخل الاسم الأخير",
+                "email": "البريد الإلكتروني",
+                "emailPlaceholder": "أدخل البريد الإلكتروني",
+                "role": "الدور",
+                "rolePlaceholder": "اختر الدور"
+            },
+            "btn": {
+                "cancel": "إلغاء",
+                "updating": "جاري تحديث المستخدم...",
+                "updateUser": "تحديث المستخدم"
+            }
+        }
+    },
+    "ContactPages": {
+        "contactListPage": {
+            "title": "قائمة الاتصالات",
+            "description": "يعرض قائمة الاتصالات جميع الاتصالات المتاحة مع التفاصيل الرئيسية للتصفح السهل.",
+            "contactTable": {
+                "title": "جدول الاتصالات",
+                "searchPlaceholder": "ابحث عن اتصال...",
+                "contactHeader": {
+                    "id": "الرقم",
+                    "fullName": "الاسم الكامل",
+                    "email": "البريد الإلكتروني",
+                    "phone": "الهاتف",
+                    "subject": "الموضوع",
+                    "propertyType": "نوع العقار",
+                    "location": "الموقع",
+                    "urgent": "ملاحظة",
+                    "status": "الحالة",
+                    "createdAt": "تاريخ الإنشاء",
+                    "actions": "الإجراءات",
+                    "editTooltip": "تعديل الاتصال",
+                    "viewTooltip": "عرض الاتصال",
+                    "contactToast": {
+                        "statusUpdated": "تم تحديث الحالة بنجاح",
+                        "statusUpdateFailed": "فشل تحديث الحالة"
+                    },
+                    "contactDelete": {
+                        "title": "حذف الاتصال",
+                        "description": "هل أنت متأكد أنك تريد حذف هذا #{id} اتصال؟"
+                    }
+                }
+            }
+        },
+        "contactDetailPage": {
+            "title": "تفاصيل الاتصال",
+            "description": "يعرض تفاصيل الاتصال بالتفاصيل الرئيسية.",
+            "loading": "جاري تحميل تفاصيل الاتصال...",
+            "contactDetails": {
+                "basicInformationCard": {
+                    "title": "معلومات الاتصال",
+                    "infoCard": {
+                        "id": "الرقم",
+                        "fullName": "الاسم الكامل",
+                        "email": "البريد الإلكتروني",
+                        "phone": "الهاتف",
+                        "propertyId": "رقم العقار",
+                        "status": "الحالة",
+                        "urgent": "ملاحظة"
+                    }
+                },
+                "propertyInformationCard": {
+                    "title": "معلومات العقار",
+                    "infoCard": {
+                        "subject": "الموضوع",
+                        "propertyType": "نوع العقار",
+                        "location": "الموقع",
+                        "budget": "الميزانية"
+                    }
+                },
+                "contactPreferencesCard": {
+                    "title": "تفضيلات الاتصال",
+                    "infoCard": {
+                        "preferredContactMethod": "طريقة الاتصال المفضلة",
+                        "preferredContactTime": "وقت الاتصال المفضل"
+                    }
+                },
+                "messageDetailsCard": {
+                    "title": "تفاصيل الرسالة",
+                    "infoCard": {
+                        "message": "الرسالة"
+                    }
+                },
+                "timestampsCard": {
+                    "title": "الأوقات",
+                    "infoCard": {
+                        "createdAt": "تاريخ الإنشاء",
+                        "updatedAt": "تاريخ التحديث"
+                    }
+                }
+            }
+        }
+    },
+    "ProfilePages": {
+        "changePasswordPage": {
+            "title": "تغيير كلمة المرور",
+            "description": "يسمح هذا الصفحة بتغيير كلمة المرور.",
+            "loading": "جاري تغيير كلمة المرور...",
+            "back": "الرجوع",
+            "form": {
+                "currentPassword": "كلمة المرور الحالية",
+                "currentPasswordPlaceholder": "أدخل كلمة المرور الحالية",
+                "newPassword": "كلمة المرور الجديدة",
+                "newPasswordPlaceholder": "أدخل كلمة المرور الجديدة",
+                "confirmPassword": "تأكيد كلمة المرور الجديدة",
+                "confirmPasswordPlaceholder": "أدخل كلمة المرور الجديدة"
+            },
+            "btn": {
+                "cancel": "إلغاء",
+                "updating": "جاري تحديث كلمة المرور...",
+                "updatePassword": "تحديث كلمة المرور"
+            }
+        }
+    },
+    "ProfileMenu": {
+        "changePassword": "تغيير كلمة المرور",
+        "signOut": "تسجيل الخروج"
+    }
+}
