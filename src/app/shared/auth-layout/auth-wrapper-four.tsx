@@ -66,10 +66,10 @@ export default function AuthWrapper({
         >
           <div className="flex flex-col items-center">
             <Image
-              src={"/short-logo.png"}
+              src={"/arma-logo.webp"}
               alt="Short Logo"
-              height={45}
-              width={45}
+              height={100}
+              width={100}
               priority
             />
             <Title
@@ -115,8 +115,8 @@ function AuthHeader() {
     <header className="flex items-center justify-between p-4 lg:px-16 lg:py-6 2xl:px-24">
       <Link href={'/'}>
         <Image
-          src={"/sadef-logo.png"}
-          alt="Sadef Logo"
+          src={"/arma-logo.webp"}
+          alt="Arma Logo"
           height={200}
           width={200}
           priority

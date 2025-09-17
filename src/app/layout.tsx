@@ -10,8 +10,8 @@ import { SoonerToaster } from "@/components/shadCn/ui/sooner";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Sadef - Property seller",
-  description: "Sadef is a platform that connects property sellers with potential buyers, making the process of selling properties easier and more efficient.",
+  title: "Arma - Property seller",
+  description: "Arma is a platform that connects property sellers with potential buyers, making the process of selling properties easier and more efficient.",
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode;  }) {

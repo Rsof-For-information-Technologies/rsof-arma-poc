@@ -7,11 +7,11 @@ import { Params } from "@/types/params";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Sadef - Property",
-    default: "Sadef - Property",
+    template: "%s | Arma - Property",
+    default: "Arma - Property",
   },
-  keywords: ["Sadef", "Property Seller", "Real Estate", "Property Management"],
-  description: "Sadef is a platform that connects property sellers with potential buyers, making the process of selling properties easier and more efficient.",
+  keywords: ["Arma", "Property Seller", "Real Estate", "Property Management"],
+  description: "Arma is a platform that connects property sellers with potential buyers, making the process of selling properties easier and more efficient.",
 };
 
 export default async function RootLayout({

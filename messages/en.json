@@ -1,6 +1,6 @@
 {
     "landingPage": {
-        "title": "Welcome to Sadef Admin Site"
+        "title": "Welcome to Arma Admin Site"
     },
     "AuthHeader": {
         "login": "Login",
@@ -122,7 +122,7 @@
     },
     "Dashboard": {
         "title": "Dashboard",
-        "description": "Welcome to the dashboard of Sadef Admin Site",
+        "description": "Welcome to the dashboard of Arma Admin Site",
         "propertyAnalytics": {
             "title": "Property Analytics",
             "cards": {
