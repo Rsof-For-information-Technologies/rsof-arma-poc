@@ -4,6 +4,7 @@ import { DirectionProvider } from "@/components/direction-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Params } from "@/types/params";
+import GlobalDrawer from "../shared/drawer-views/container";
 
 export const metadata: Metadata = {
   title: {
@@ -31,6 +32,7 @@ export default async function RootLayout({
         <HydrogenLayout>
           {children}
         </HydrogenLayout>
+        <GlobalDrawer />
       </DirectionProvider>
     </NextIntlClientProvider>
   );

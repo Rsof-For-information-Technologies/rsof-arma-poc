@@ -1,11 +1,10 @@
-import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/theme-provider";
 import { inter, lexendDeca } from "@/app/fonts";
-import GlobalDrawer from "@/app/shared/drawer-views/container";
 import GlobalModal from "@/app/shared/modal-views/container";
-import { cn } from "@/utils/class-names";
-import { Suspense } from "react";
 import { SoonerToaster } from "@/components/shadCn/ui/sooner";
+import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/utils/class-names";
+import type { Metadata } from "next";
+import { Suspense } from "react";
 
 import "@/app/globals.css";
 
@@ -30,7 +29,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <SoonerToaster position="bottom-right" duration={(1000 * 6)} richColors />
           <ThemeProvider>
             {children}
-            <GlobalDrawer />
             <GlobalModal />
           </ThemeProvider>
         </Suspense>
