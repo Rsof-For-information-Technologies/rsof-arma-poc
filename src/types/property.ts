@@ -1,24 +1,33 @@
 export interface PropertyFormData {
+    // Translation Fields
+    TranslationsJson: Record<string, {
+        title: string;
+        description: string;
+        unitName?: string;
+        warrantyInfo?: string;
+        metaTitle?: string;
+        metaDescription?: string;
+        metaKeywords?: string;
+        slug?: string;
+        canonicalUrl?: string;
+    }>;
+
     // Basic Info
-    title: string;
     propertyType?: number;
     unitCategory?: number;
     price: number;
-    city: number | undefined;
+    city: number;
     location: string;
     areaSize: number;
     bedrooms?: number;
     bathrooms?: number;
     totalFloors?: number;
-    unitName?: string;
     isInvestorOnly: boolean;
 
     // Property Details
-    description: string;
     features?: string[];
     projectedResaleValue?: number;
     expectedAnnualRent?: number;
-    warrantyInfo?: string;
     expectedDeliveryDate?: string;
     status?: number;
     expiryDate?: string;
@@ -64,6 +73,14 @@ export type CreatePropertyData = {
     features?: number[];
     createdAt?: string;
     updatedAt?: string;
+    contentLanguage?: number;
+    metaTitle?: string;
+    metaDescription?: string;
+    metaKeywords?: string;
+    slug?: string;
+    canonicalUrl?: string;
+    isExpired?: boolean;
+    isActive?: boolean;
 }
 
 export type CreatePropertyResponse = {

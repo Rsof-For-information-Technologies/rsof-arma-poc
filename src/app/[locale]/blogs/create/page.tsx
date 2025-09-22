@@ -70,7 +70,6 @@ function CreateBlog() {
       console.log({ payload });
 
       const responseData = await createBlog(payload);
-      console.log({ responseData });
       if (responseData.succeeded) {
         router.push(`/${locale}${routes.blog.list}`);
       } else {

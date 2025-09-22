@@ -1,13 +1,15 @@
 "use client";
 
+import { useStaticDataStore } from "@/store/static-data.store";
+import { CreatePropertyData } from "@/types/property";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { useEffect } from "react";
 import CollapsibleSection from "../../(components)/CollapsibleSection";
 import InfoCard from "../../(components)/InfoCard";
-import { useStaticDataStore } from "@/store/static-data.store";
-import { CreatePropertyData } from "@/types/property";
-import Image from "next/image";
-import { useTranslations } from "next-intl";
 import PropertyTimeline from "./property-timeline";
+import { formatDate } from "@/utils/format-date";
+
 interface PropertyDetailsClientProps {
     propertyData: CreatePropertyData;
     baseUrl: string;
@@ -20,6 +22,7 @@ export default function PropertyDetailsClient({ propertyData, baseUrl }: Propert
         propertyStatuses,
         unitCategories,
         features,
+        cities,
         fetchStaticData,
         isLoading: isLoadingStaticData
     } = useStaticDataStore();
@@ -50,15 +53,20 @@ export default function PropertyDetailsClient({ propertyData, baseUrl }: Propert
         value: status.value
     }));
 
+    const citiesOptions = cities.map(city => ({
+        label: city.displayName,
+        value: city.value
+    }))
+
     // If still loading static data, show a loading indicator
-    // if (isLoadingStaticData) {
-    //     return (
-    //         <div className="flex justify-center items-center min-h-[100px] my-4">
-    //             <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary"></div>
-    //             <span className="ml-3 text-gray-600">{t('loading')}</span>
-    //         </div>
-    //     );
-    // }
+    if (isLoadingStaticData) {
+        return (
+            <div className="flex justify-center items-center min-h-[100px] my-4">
+                <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary"></div>
+                <span className="ml-3 text-gray-600">{t('loading')}</span>
+            </div>
+        );
+    }
 
     const data = propertyData;
 
@@ -80,7 +88,7 @@ export default function PropertyDetailsClient({ propertyData, baseUrl }: Propert
                             value={getOptionLabel(data.unitCategory, unitCategoryOptions)}
                             color="green"
                         />
-                        <InfoCard icon="🏙️" label={t('propertyDetails.basicInformationCard.infoCard.city')} value={data.city} color="green" />
+                        <InfoCard icon="🏙️" label={t('propertyDetails.basicInformationCard.infoCard.city')} value={getOptionLabel(data.city, citiesOptions)} color="green" />
                         <InfoCard icon="📍" label={t('propertyDetails.basicInformationCard.infoCard.location')} value={data.location} color="green" />
                         <InfoCard icon="📏" label={t('propertyDetails.basicInformationCard.infoCard.areaSize')} value={data.areaSize} color="green" />
                         <InfoCard
@@ -99,8 +107,8 @@ export default function PropertyDetailsClient({ propertyData, baseUrl }: Propert
                         <InfoCard icon="📈" label={t('propertyDetails.financialInformationCard.infoCard.projectedResaleValue')} value={data.projectedResaleValue} color="orange" />
                         <InfoCard icon="🏦" label={t('propertyDetails.financialInformationCard.infoCard.expectedAnnualRent')} value={data.expectedAnnualRent} color="orange" />
                         <InfoCard icon="🛡️" label={t('propertyDetails.financialInformationCard.infoCard.warrantyInfo')} value={data.warrantyInfo} color="orange" />
-                        <InfoCard icon="📅" label={t('propertyDetails.financialInformationCard.infoCard.expectedDeliveryDate')} value={data.expectedDeliveryDate} color="orange" />
-                        <InfoCard icon="⏳" label={t('propertyDetails.financialInformationCard.infoCard.expiryDate')} value={data.expiryDate} color="orange" />
+                        <InfoCard icon="📅" label={t('propertyDetails.financialInformationCard.infoCard.expectedDeliveryDate')} value={data.expectedDeliveryDate ? formatDate(new Date(data.expectedDeliveryDate)) : 'N/A'} color="orange" />
+                        <InfoCard icon="⏳" label={t('propertyDetails.financialInformationCard.infoCard.expiryDate')} value={data.expiryDate ? formatDate(new Date(data.expiryDate)) : 'N/A'} color="orange" />
                     </div>
                 </CollapsibleSection>
 

@@ -8,12 +8,17 @@ import type { UseFormReturn } from "react-hook-form"
 import { Checkbox, Input, Select } from "rizzui"
 import { useStaticDataStore } from "@/store/static-data.store"
 import { useTranslations } from "next-intl"
+import { useParams } from "next/navigation"
+import { Params } from "@/types/params"
 interface BasicInfoStepProps {
   form: UseFormReturn<CreatePropertyFormData>
 }
 
 export function BasicInfoStep({ form }: BasicInfoStepProps) {
   const t = useTranslations('PropertyPages.createPropertyPage.createProperty.form')
+  const params = useParams<Params>()
+  const currentLocale = params.locale || 'en'
+
   const {
     register,
     formState: { errors },
@@ -31,6 +36,10 @@ export function BasicInfoStep({ form }: BasicInfoStepProps) {
   const propertyTypeValue = watch("propertyType");
   const unitCategoryValue = watch("unitCategory");
   const cityValue = watch("city");
+
+  // Watch translation values for current locale
+  const translationsJson = watch("TranslationsJson") || {};
+  const currentTranslation = translationsJson[currentLocale] || {};
 
   // Convert static data to Select options format
   const propertyTypeOptions = propertyTypes.map(type => ({
@@ -59,8 +68,24 @@ export function BasicInfoStep({ form }: BasicInfoStepProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
             <Label htmlFor="title">{t('stepBasicInformation.propertyTitle')} <span className="text-red-600">*</span></Label>
-            <Input id="title" {...register("title")} placeholder={t('stepBasicInformation.propertyTitlePlaceholder')} />
-            {errors.title && <p className="text-sm text-red-600">{errors.title.message}</p>}
+            <Input
+              id="title"
+              value={currentTranslation.title || ""}
+              onChange={(e) => {
+                const newTranslations = {
+                  ...translationsJson,
+                  [currentLocale]: {
+                    ...currentTranslation,
+                    title: e.target.value
+                  }
+                };
+                setValue("TranslationsJson", newTranslations);
+              }}
+              placeholder={t('stepBasicInformation.propertyTitlePlaceholder')}
+            />
+            {errors.TranslationsJson?.[currentLocale]?.title && (
+              <p className="text-sm text-red-600">{errors.TranslationsJson[currentLocale]?.title?.message}</p>
+            )}
           </div>
 
           <div className="space-y-2">
@@ -113,11 +138,11 @@ export function BasicInfoStep({ form }: BasicInfoStepProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
+            <Label htmlFor="price">{t('stepBasicInformation.city')} <span className="text-red-600">*</span></Label>
             <Select
-              label={t('stepBasicInformation.city')}
               options={cityOptions}
               value={cityValue ?? undefined}
-              onChange={(value) => setValue("city", value ? Number(value) : 0)}
+              onChange={(value) => setValue("city", Number(value))}
               getOptionValue={(option) => option.value.toString()}
               displayValue={(selected: number | undefined) =>
                 selected !== undefined
@@ -196,7 +221,21 @@ export function BasicInfoStep({ form }: BasicInfoStepProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
             <Label htmlFor="unitName">{t('stepBasicInformation.unitName')}</Label>
-            <Input id="unitName" {...register("unitName")} placeholder={t('stepBasicInformation.unitNamePlaceholder')} />
+            <Input
+              id="unitName"
+              value={currentTranslation.unitName || ""}
+              onChange={(e) => {
+                const newTranslations = {
+                  ...translationsJson,
+                  [currentLocale]: {
+                    ...currentTranslation,
+                    unitName: e.target.value
+                  }
+                };
+                setValue("TranslationsJson", newTranslations);
+              }}
+              placeholder={t('stepBasicInformation.unitNamePlaceholder')}
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="totalFloors">{t('stepBasicInformation.totalFloors')}</Label>
@@ -208,7 +247,7 @@ export function BasicInfoStep({ form }: BasicInfoStepProps) {
               decimalScale={0}
               value={watch("totalFloors") ?? undefined}
               onValueChange={(value) => {
-                setValue("totalFloors", value ?? undefined, { shouldValidate: true });
+                setValue("totalFloors", value || undefined, { shouldValidate: true });
               }}
               stepper={1}
             />

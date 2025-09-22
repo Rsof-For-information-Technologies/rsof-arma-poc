@@ -1,20 +1,66 @@
+"use client"
 import type { UseFormReturn } from "react-hook-form"
 import { Phone } from "lucide-react"
 import { CreatePropertyFormData } from "@/validators/createProperty"
 import { Label } from "@/components/shadCn/ui/label"
 import { Input } from "rizzui"
 import { useTranslations } from "next-intl"
+import { useParams } from "next/navigation"
+import { Params } from "@/types/params"
+import { useStaticDataStore } from "@/store/static-data.store"
+import { useEffect } from "react"
 interface ContactPublishingStepProps {
   form: UseFormReturn<CreatePropertyFormData>
 }
 
 export function ContactPublishingStep({ form }: ContactPublishingStepProps) {
   const t = useTranslations('PropertyPages.createPropertyPage.createProperty.form.stepContactPublishing')
+  const params = useParams<Params>()
+  const currentLocale = params.locale || 'en'
+
   const {
     register,
     formState: { errors },
     watch,
   } = form
+
+  const { cities, propertyTypes, unitCategories, features, fetchStaticData } = useStaticDataStore();
+
+  // Fetch static data on component mount
+  useEffect(() => {
+    fetchStaticData();
+  }, [fetchStaticData]);
+
+  // Watch translation values for current locale
+  const translationsJson = watch("TranslationsJson") || {};
+  const currentTranslation = translationsJson[currentLocale] || {};
+
+  // Get display names for static data
+  const getCityName = (cityId: number | undefined) => {
+    if (!cityId) return '';
+    const city = cities.find(city => city.value === cityId);
+    return city?.displayName || '';
+  };
+
+  const getPropertyTypeName = (typeId: number | undefined) => {
+    if (!typeId) return '';
+    const type = propertyTypes.find(type => type.value === typeId);
+    return type?.displayName || '';
+  };
+
+  const getUnitCategoryName = (categoryId: number | undefined) => {
+    if (!categoryId) return '';
+    const category = unitCategories.find(cat => cat.value === categoryId);
+    return category?.displayName || '';
+  };
+
+  const getFeatureNames = (featureIds: string[] | undefined) => {
+    if (!featureIds || featureIds.length === 0) return '';
+    return featureIds.map(featureId => {
+      const feature = features.find(f => f.value.toString() === featureId);
+      return feature?.displayName || featureId;
+    }).join(', ');
+  };
 
   return (
     <div>
@@ -37,7 +83,7 @@ export function ContactPublishingStep({ form }: ContactPublishingStepProps) {
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
               <span className="text-gray-600">{t('propertySummary.title')}</span>
-              <span>{watch("title") || t('propertySummary.notSpecified')}</span>
+              <span>{currentTranslation.title || t('propertySummary.notSpecified')}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">{t('propertySummary.price')}</span>
@@ -45,15 +91,15 @@ export function ContactPublishingStep({ form }: ContactPublishingStepProps) {
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">{t('propertySummary.propertyType')}</span>
-              <span>{watch("propertyType") || t('propertySummary.notSpecified')}</span>
+              <span>{getPropertyTypeName(watch("propertyType")) || t('propertySummary.notSpecified')}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">{t('propertySummary.unitCategory')}</span>
-              <span>{watch("unitCategory") || t('propertySummary.notSpecified')}</span>
+              <span>{getUnitCategoryName(watch("unitCategory")) || t('propertySummary.notSpecified')}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">{t('propertySummary.unitName')}</span>
-              <span>{watch("unitName") || t('propertySummary.notSpecified')}</span>
+              <span>{currentTranslation.unitName || t('propertySummary.notSpecified')}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">{t('propertySummary.totalFloors')}</span>
@@ -65,7 +111,7 @@ export function ContactPublishingStep({ form }: ContactPublishingStepProps) {
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">{t('propertySummary.features')}</span>
-              <span>{watch("features")?.join(", ") || t('propertySummary.notSpecified')}</span>
+              <span>{getFeatureNames(watch("features")) || t('propertySummary.notSpecified')}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">{t('propertySummary.projectedResale')}</span>
@@ -73,7 +119,7 @@ export function ContactPublishingStep({ form }: ContactPublishingStepProps) {
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">{t('propertySummary.warrantyInfo')}</span>
-              <span>{watch("warrantyInfo") || t('propertySummary.notSpecified')}</span>
+              <span>{currentTranslation.warrantyInfo || t('propertySummary.notSpecified')}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">{t('propertySummary.expectedDeliveryDate')}</span>
@@ -86,7 +132,7 @@ export function ContactPublishingStep({ form }: ContactPublishingStepProps) {
             <div className="flex justify-between">
               <span className="text-gray-600">{t('propertySummary.location')}</span>
               <span>
-                {watch("city") && watch("location") ? `${watch("location")}, ${watch("city")}` : t('propertySummary.notSpecified')}
+                {watch("city") && watch("location") ? `${watch("location")}, ${getCityName(watch("city"))}` : t('propertySummary.notSpecified')}
               </span>
             </div>
             <div className="flex justify-between">

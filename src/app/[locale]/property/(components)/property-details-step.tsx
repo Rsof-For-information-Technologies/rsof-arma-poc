@@ -8,12 +8,17 @@ import { Input, MultiSelect, Select, Textarea } from "rizzui"
 import RichTextEditor from "@/components/textEditor/rich-text-editor"
 import { useStaticDataStore } from "@/store/static-data.store"
 import { useTranslations } from "next-intl"
+import { useParams } from "next/navigation"
+import { Params } from "@/types/params"
 interface PropertyDetailsStepProps {
   form: UseFormReturn<CreatePropertyFormData>
 }
 
 export function PropertyDetailsStep({ form }: PropertyDetailsStepProps) {
   const t = useTranslations('PropertyPages.createPropertyPage.createProperty.form.stepPropertyDetails')
+  const params = useParams<Params>()
+  const currentLocale = params.locale || 'en'
+
   const {
     register,
     formState: { errors },
@@ -27,6 +32,10 @@ export function PropertyDetailsStep({ form }: PropertyDetailsStepProps) {
   useEffect(() => {
     fetchStaticData();
   }, [fetchStaticData]);
+
+  // Watch translation values for current locale
+  const translationsJson = watch("TranslationsJson") || {};
+  const currentTranslation = translationsJson[currentLocale] || {};
 
   // Convert static data to MultiSelect options format
   const featuresOptions = features.map(feature => ({
@@ -43,11 +52,21 @@ export function PropertyDetailsStep({ form }: PropertyDetailsStepProps) {
         <div className="space-y-2">
           <Label htmlFor="description">{t('description')} <span className="text-red-600">*</span></Label>
           <RichTextEditor
-            value={watch("description") || ""}
-            onChange={val => setValue("description", val)}
-          // error={errors.description?.message}
+            value={currentTranslation.description || ""}
+            onChange={(val) => {
+              const newTranslations = {
+                ...translationsJson,
+                [currentLocale]: {
+                  ...currentTranslation,
+                  description: val
+                }
+              };
+              setValue("TranslationsJson", newTranslations);
+            }}
           />
-          {errors.description && <p className="text-sm text-red-600">{errors.description.message}</p>}
+          {errors.TranslationsJson?.[currentLocale]?.description && (
+            <p className="text-sm text-red-600">{errors.TranslationsJson[currentLocale]?.description?.message}</p>
+          )}
         </div>
 
         <div className="space-y-2">
@@ -96,7 +115,22 @@ export function PropertyDetailsStep({ form }: PropertyDetailsStepProps) {
 
         <div className="space-y-2">
           <Label htmlFor="warrantyInfo">{t('warrantyInformation')} <span className="text-red-600">*</span></Label>
-          <Textarea id="warrantyInfo" {...register("warrantyInfo")} placeholder={t('warrantyInformationPlaceholder')} rows={3} />
+          <Textarea
+            id="warrantyInfo"
+            value={currentTranslation.warrantyInfo || ""}
+            onChange={(e) => {
+              const newTranslations = {
+                ...translationsJson,
+                [currentLocale]: {
+                  ...currentTranslation,
+                  warrantyInfo: e.target.value
+                }
+              };
+              setValue("TranslationsJson", newTranslations);
+            }}
+            placeholder={t('warrantyInformationPlaceholder')}
+            rows={3}
+          />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -111,14 +145,110 @@ export function PropertyDetailsStep({ form }: PropertyDetailsStepProps) {
           </div>
         </div>
 
-        {/* <div className="space-y-2">
-           <Select
-            label="Select"
-            options={options}
-            value={watch("status")}
-            onChange={(value) => setValue("status", value as number)}
-          />
-        </div> */}
+        {/* SEO Fields Section */}
+        <div className="space-y-4 border-t pt-6">
+          <h4 className="text-lg font-semibold">{t('seoFields.title')}</h4>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="metaTitle">{t('seoFields.metaTitle')}</Label>
+              <Input
+                id="metaTitle"
+                value={currentTranslation.metaTitle || ""}
+                onChange={(e) => {
+                  const newTranslations = {
+                    ...translationsJson,
+                    [currentLocale]: {
+                      ...currentTranslation,
+                      metaTitle: e.target.value
+                    }
+                  };
+                  setValue("TranslationsJson", newTranslations);
+                }}
+                placeholder={t('seoFields.metaTitlePlaceholder')}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="slug">{t('seoFields.urlSlug')}</Label>
+              <Input
+                id="slug"
+                value={currentTranslation.slug || ""}
+                onChange={(e) => {
+                  const newTranslations = {
+                    ...translationsJson,
+                    [currentLocale]: {
+                      ...currentTranslation,
+                      slug: e.target.value
+                    }
+                  };
+                  setValue("TranslationsJson", newTranslations);
+                }}
+                placeholder={t('seoFields.urlSlugPlaceholder')}
+              />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="metaDescription">{t('seoFields.metaDescription')}</Label>
+            <Textarea
+              id="metaDescription"
+              value={currentTranslation.metaDescription || ""}
+              onChange={(e) => {
+                const newTranslations = {
+                  ...translationsJson,
+                  [currentLocale]: {
+                    ...currentTranslation,
+                    metaDescription: e.target.value
+                  }
+                };
+                setValue("TranslationsJson", newTranslations);
+              }}
+              placeholder={t('seoFields.metaDescriptionPlaceholder')}
+              rows={3}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="metaKeywords">{t('seoFields.metaKeywords')}</Label>
+            <Input
+              id="metaKeywords"
+              value={currentTranslation.metaKeywords || ""}
+              onChange={(e) => {
+                const newTranslations = {
+                  ...translationsJson,
+                  [currentLocale]: {
+                    ...currentTranslation,
+                    metaKeywords: e.target.value
+                  }
+                };
+                setValue("TranslationsJson", newTranslations);
+              }}
+              placeholder={t('seoFields.metaKeywordsPlaceholder')}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="canonicalUrl">{t('seoFields.canonicalUrl')}</Label>
+            <Input
+              id="canonicalUrl"
+              type="url"
+              value={currentTranslation.canonicalUrl || ""}
+              onChange={(e) => {
+                const newTranslations = {
+                  ...translationsJson,
+                  [currentLocale]: {
+                    ...currentTranslation,
+                    canonicalUrl: e.target.value
+                  }
+                };
+                setValue("TranslationsJson", newTranslations);
+              }}
+              placeholder={t('seoFields.canonicalUrlPlaceholder')}
+            />
+          </div>
+        </div>
+
       </div>
     </div>
   )

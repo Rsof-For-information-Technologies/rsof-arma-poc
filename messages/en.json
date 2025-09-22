@@ -419,7 +419,20 @@
                         "warrantyInformation": "Warranty Information",
                         "warrantyInformationPlaceholder": "Enter warranty details",
                         "expectedDeliveryDate": "Expected Delivery Date",
-                        "expiryDate": "Expiry Date"
+                        "expiryDate": "Expiry Date",
+                        "seoFields": {
+                            "title": "SEO (Search Engine Optimization)",
+                            "metaTitle": "Meta Title",
+                            "metaTitlePlaceholder": "Enter meta title for SEO",
+                            "metaDescription": "Meta Description",
+                            "metaDescriptionPlaceholder": "Enter meta description for SEO",
+                            "metaKeywords": "Meta Keywords",
+                            "metaKeywordsPlaceholder": "Enter meta keywords separated by commas",
+                            "canonicalUrl": "Canonical URL",
+                            "canonicalUrlPlaceholder": "Enter canonical URL",
+                            "urlSlug": "URL Slug",
+                            "urlSlugPlaceholder": "Enter URL slug (e.g., my-property-title)"
+                        }
                     },
                     "stepPropertyMedia": {
                         "title": "Property Media",

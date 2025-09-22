@@ -5,15 +5,16 @@ import Authenticate from "@/components/auth/authenticate";
 import Authorize from "@/components/auth/authorize";
 import { UserRole } from "@/types/userRoles";
 import { getTranslations } from "next-intl/server";
+import { Params } from "@/types/params";
 
-export default async function UpdatePropertyPage({
-  params,
-}: {
-  params: { propertyId: string };
-}) {
+type UpdatePropertyPageProps = {
+  params: Params & { propertyId: string };
+}
+
+export default async function UpdatePropertyPage({ params }: UpdatePropertyPageProps) {
   try {
-    const response = await getPropertyById(params.propertyId);
-
+    const response = await getPropertyById(params.propertyId, params.locale);
+    
     if (!response?.data) {
       return notFound();
     }
@@ -23,7 +24,7 @@ export default async function UpdatePropertyPage({
     return (
       <Authenticate >
         <Authorize allowedRoles={[UserRole.SuperAdmin, UserRole.Admin]} navigate={true}>
-        <div className="flex flex-col py-6">
+          <div className="flex flex-col py-6">
             <div>
               <h1 className="mb-4 text-2xl font-semibold">{t('title')}</h1>
               <p className="mb-6 text-gray-600">{t('description')}</p>
