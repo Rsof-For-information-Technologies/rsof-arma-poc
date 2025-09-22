@@ -1,21 +1,17 @@
 'use client';
-
 import { DrawerPlacements, useDrawerStore } from '@/app/shared/drawer-views/use-drawer';
-import { ActionIcon } from 'rizzui';
 import cn from '@/utils/class-names';
 import { JSX } from 'react';
-
+import { ActionIcon } from 'rizzui';
 interface Props {
   view: JSX.Element;
   placement?: DrawerPlacements;
   customSize?: string;
   className?: string;
 }
-
 export default function HamburgerButton({
   view,
   placement = 'left',
-  // customSize = '320px',
   className,
 }: Props) {
   const { openDrawer, state: { isOpen, customSize }, closeDrawer, } = useDrawerStore();
@@ -25,19 +21,17 @@ export default function HamburgerButton({
       variant="text"
       className={cn('me-3 h-auto w-auto p-0 sm:me-4 xhidden', className)}
       onClick={() => {
-
-
         if (!isOpen) {
           openDrawer({
             view,
             placement,
             customSize,
             isOpen: true,
+            userToggled: true,
           })
         } else {
           closeDrawer()
         }
-
       }}
     >
       <svg

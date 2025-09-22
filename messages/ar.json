@@ -419,7 +419,20 @@
                         "warrantyInformation": "معلومات الضمان",
                         "warrantyInformationPlaceholder": "أدخل معلومات الضمان",
                         "expectedDeliveryDate": "تاريخ التسليم المتوقع",
-                        "expiryDate": "تاريخ الانتهاء"
+                        "expiryDate": "تاريخ الانتهاء",
+                        "seoFields": {
+                            "title": "تحسين محركات البحث (SEO)",
+                            "metaTitle": "عنوان الميتا",
+                            "metaTitlePlaceholder": "أدخل عنوان الميتا لتحسين محركات البحث",
+                            "metaDescription": "وصف الميتا",
+                            "metaDescriptionPlaceholder": "أدخل وصف الميتا لتحسين محركات البحث",
+                            "metaKeywords": "الكلمات المفتاحية",
+                            "metaKeywordsPlaceholder": "أدخل الكلمات المفتاحية مفصولة بفواصل",
+                            "canonicalUrl": "الرابط الأساسي (Canonical URL)",
+                            "canonicalUrlPlaceholder": "أدخل الرابط الأساسي",
+                            "urlSlug": "عنوان الرابط (Slug)",
+                            "urlSlugPlaceholder": "أدخل عنوان الرابط (مثال: my-property-title)"
+                        }
                     },
                     "stepPropertyMedia": {
                         "title": "الوسائط المرئية",

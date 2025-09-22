@@ -5,15 +5,18 @@ import Authorize from "@/components/auth/authorize";
 import { UserRole } from "@/types/userRoles";
 import PropertyDetailsClient from "../(components)/PropertyDetailsClient";
 import { getTranslations } from "next-intl/server";
+import { Params } from "@/types/params";
+
+type DetailsPropertyPageProps = {
+  params: Params & { propertyId: string };
+}
 
 export default async function DetailsPropertyPage({
   params,
-}: {
-  params: { propertyId: string };
-}) {
+}: DetailsPropertyPageProps) {
   try {
     const t = await getTranslations('PropertyPages.propertyDetailPage');
-    const response = await getPropertyById(params.propertyId);
+    const response = await getPropertyById(params.propertyId, params.locale);
     const BASE_URL = process.env.SERVER_BASE_URL || '';
 
     if (!response?.data) {

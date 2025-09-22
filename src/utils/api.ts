@@ -1,19 +1,19 @@
-import { BlogFormData, CreateBlogResponse, GetBlogs } from '@/types/blog';
+import { CreateBlogResponse, GetBlogs } from '@/types/blog';
+import { GetContactById, GetContactDashboardStats, GetContacts, UpdateContactStatusResponse } from '@/types/contact';
 import { CreateLeadResponse, GetLeads } from '@/types/lead';
 import { LoginResponse } from '@/types/login';
 import { MaintenenceRequestDetail, MaintenenceRequestResponse } from '@/types/maintenanceRequest';
-import { PropertyFormData, CreatePropertyResponse, GetProperties, PropertyFilters, GetFilteredProperties } from '@/types/property';
-import { UpdatePasswordResponse } from '@/types/updatePassword';
-import { GetUsers, GetUserById, UpdateUserRequest, UpdateUserResponse } from '@/types/user';
-import { GetContacts, GetContactById, UpdateContactStatusResponse, GetContactDashboardStats } from '@/types/contact';
+import { CreatePropertyResponse, GetFilteredProperties, GetProperties, PropertyFilters, PropertyFormData } from '@/types/property';
 import { PropertyTimelineResponse } from '@/types/propertyTimeline';
+import { GetPropertyCities, GetPropertyFeatures, GetPropertyStatuses, GetPropertyTypes, GetPropertyUnitCategories } from '@/types/staticData';
+import { UpdatePasswordResponse } from '@/types/updatePassword';
+import { GetUserById, GetUsers, UpdateUserRequest, UpdateUserResponse } from '@/types/user';
+import { getCookie, removeCookie } from '@/utils/cookieStorage';
+import { BlogForm } from '@/validators/createBlog';
 import { ChangePasswordSchema } from '@/validators/updatePaseword.schema';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-import { getCookie, removeCookie } from '@/utils/cookieStorage';
 import { convertNumberToLocalFormat } from './convertNumberToLocalFormat';
-import { GetPropertyCities, GetPropertyFeatures, GetPropertyStatuses, GetPropertyTypes, GetPropertyUnitCategories } from '@/types/staticData';
-import { BlogForm } from '@/validators/createBlog';
 
 const apiCall = () => {
   const instance = axios.create({
@@ -237,10 +237,14 @@ export const getPropertyDashboard = async () => {
 
 export const createProperty = async (data: PropertyFormData) => {
   const api = apiCall();
+  console.log("inininni api api api api")
+  console.log(data)
   const formData = new FormData();
 
+  // Add TranslationsJson as JSON string
+  formData.append('TranslationsJson', JSON.stringify(data.TranslationsJson));
+
   // Basic Info
-  formData.append("Title", data.title);
   formData.append("Price", String(data.price));
   formData.append("City", String(data.city));
   formData.append("Location", data.location);
@@ -251,17 +255,14 @@ export const createProperty = async (data: PropertyFormData) => {
   if (data.bedrooms !== undefined) formData.append("Bedrooms", String(data.bedrooms));
   if (data.bathrooms !== undefined) formData.append("Bathrooms", String(data.bathrooms));
   if (data.totalFloors !== undefined) formData.append("floors", String(data.totalFloors));
-  if (data.unitName) formData.append("UnitName", data.unitName);
   if (data.isInvestorOnly !== undefined) formData.append("IsInvestorOnly", String(data.isInvestorOnly));
 
   // Property Details
-  formData.append("Description", data.description);
   if (data.features && data.features.length > 0) {
     data.features.forEach((feature) => formData.append("Features", feature));
   }
   if (data.projectedResaleValue !== undefined) formData.append("ProjectedResaleValue", String(data.projectedResaleValue));
   if (data.expectedAnnualRent !== undefined) formData.append("ExpectedAnnualRent", String(data.expectedAnnualRent));
-  if (data.warrantyInfo) formData.append("WarrantyInfo", data.warrantyInfo);
   if (data.expectedDeliveryDate) formData.append("ExpectedDeliveryDate", data.expectedDeliveryDate);
   if (data.status !== undefined) formData.append("Status", String(data.status));
   if (data.expiryDate) formData.append("ExpiryDate", data.expiryDate);
@@ -294,10 +295,10 @@ export const createProperty = async (data: PropertyFormData) => {
   }
 };
 
-export const getPropertyById = async (id: string | number) => {
+export const getPropertyById = async (id: string | number, locale?: "ar" | "en") => {
   const api = apiCall()
   try {
-    const response = await api.get<CreatePropertyResponse>(`/api/v1/property/get-by-id?id=${id}`)
+    const response = await api.get<CreatePropertyResponse>(`/api/v1/property/get-by-id?id=${id}&Accept-Language=${locale ? locale : 'en'}`)
     return response.data
   } catch (error) {
     console.error("Get property by ID failed:", error)
@@ -312,8 +313,10 @@ export const updateProperty = async (id: string | number, data: PropertyFormData
   // Add ID to form data
   formData.append("Id", String(id))
 
+  // Add TranslationsJson as JSON string
+  formData.append("TranslationsJson", JSON.stringify(data.TranslationsJson))
+
   // Basic Info
-  formData.append("Title", data.title)
   formData.append("Price", String(data.price))
   formData.append("City", String(data.city))
   formData.append("Location", data.location)
@@ -324,18 +327,15 @@ export const updateProperty = async (id: string | number, data: PropertyFormData
   if (data.bedrooms !== undefined) formData.append("Bedrooms", String(data.bedrooms))
   if (data.bathrooms !== undefined) formData.append("Bathrooms", String(data.bathrooms))
   if (data.totalFloors !== undefined) formData.append("floors", String(data.totalFloors))
-  if (data.unitName) formData.append("UnitName", data.unitName)
   if (data.isInvestorOnly !== undefined) formData.append("IsInvestorOnly", String(data.isInvestorOnly))
 
   // Property Details
-  formData.append("Description", data.description)
   if (data.features && data.features.length > 0) {
     data.features.forEach((feature) => formData.append("Features", feature))
   }
   if (data.projectedResaleValue !== undefined)
     formData.append("ProjectedResaleValue", String(data.projectedResaleValue))
   if (data.expectedAnnualRent !== undefined) formData.append("ExpectedAnnualRent", String(data.expectedAnnualRent))
-  if (data.warrantyInfo) formData.append("WarrantyInfo", data.warrantyInfo)
   if (data.expectedDeliveryDate) formData.append("ExpectedDeliveryDate", data.expectedDeliveryDate)
   if (data.status !== undefined) formData.append("Status", String(data.status))
   if (data.expiryDate) formData.append("ExpiryDate", data.expiryDate)

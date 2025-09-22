@@ -10,12 +10,6 @@ export default function GlobalDrawer() {
   const pathname = usePathname();
 
   useEffect(() => {
-    closeDrawer();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname]);
-
-
-  useEffect(() => {
     const setScreenWidth = () => {
       openDrawer({ screenWidth: window.innerWidth })
 

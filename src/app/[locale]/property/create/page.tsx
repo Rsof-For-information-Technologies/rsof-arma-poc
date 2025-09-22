@@ -1,31 +1,30 @@
 "use client"
 
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useParams, useRouter } from "next/navigation"
-import { toast } from "react-hot-toast"
-import { ChevronLeft, ChevronRight, Loader2 } from "lucide-react"
-import { StepIndicator } from "../(components)/step-indicator"
-import { BasicInfoStep } from "../(components)/basic-info-step"
-import { PropertyDetailsStep } from "../(components)/property-details-step"
-import { PropertyMediaStep } from "../(components)/property-media-step"
-import { LocationStep } from "../(components)/location-step"
-import { ContactPublishingStep } from "../(components)/contact-publishing-step"
-import { createProperty } from "@/utils/api"
-import { Button } from "rizzui"
-import { basicInfoSchema, contactPublishingSchema, CreatePropertyFormData, createPropertySchema, locationSchema, propertyDetailsSchema, propertyMediaSchema } from "@/validators/createProperty"
 import Authenticate from "@/components/auth/authenticate"
 import Authorize from "@/components/auth/authorize"
+import { Stepper } from "@/components/shadCn/ui/stepper"
+import { Params } from "@/types/params"
 import { UserRole } from "@/types/userRoles"
+import { createProperty } from "@/utils/api"
 import { convertNumberToLocalFormat } from "@/utils/convertNumberToLocalFormat"
+import { basicInfoSchema, contactPublishingSchema, CreatePropertyFormData, createPropertySchema, locationSchema, propertyDetailsSchema, propertyMediaSchema } from "@/validators/createProperty"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Loader2 } from "lucide-react"
 import { useTranslations } from "next-intl"
-import { Params } from "@/types/params";
-import cn from "@/utils/class-names";
+import { useParams, useRouter } from "next/navigation"
+import { useState } from "react"
+import { useForm } from "react-hook-form"
+import { toast } from "react-hot-toast"
+import { Button } from "rizzui"
+import { BasicInfoStep } from "../(components)/basic-info-step"
+import { ContactPublishingStep } from "../(components)/contact-publishing-step"
+import { LocationStep } from "../(components)/location-step"
+import { PropertyDetailsStep } from "../(components)/property-details-step"
+import { PropertyMediaStep } from "../(components)/property-media-step"
 
 export default function CreatePropertyPage() {
   const t = useTranslations('PropertyPages.createPropertyPage')
-  const params = useParams<Params>()
+  const { locale } = useParams<Params>()
 
   const STEPS = [
     { title: t('createProperty.steps.basicInfo'), component: BasicInfoStep, schema: basicInfoSchema },
@@ -37,15 +36,26 @@ export default function CreatePropertyPage() {
 
   const [currentStep, setCurrentStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formError, setFormError] = useState<string | null>(null)
   const router = useRouter()
 
   const form = useForm<CreatePropertyFormData>({
     resolver: zodResolver(createPropertySchema),
     defaultValues: {
-      title: "",
-      description: "",
+      TranslationsJson: {
+        [locale]: {
+          title: "",
+          description: "",
+          unitName: "",
+          warrantyInfo: "",
+          metaTitle: "",
+          metaDescription: "",
+          metaKeywords: "",
+          slug: "",
+          canonicalUrl: "",
+        },
+      },
       price: 0,
-      city: undefined,
       location: "",
       areaSize: 0,
       propertyType: undefined,
@@ -53,12 +63,10 @@ export default function CreatePropertyPage() {
       bedrooms: 0,
       bathrooms: 0,
       totalFloors: undefined,
-      unitName: "",
       status: undefined,
       features: [],
       projectedResaleValue: 0,
       expectedAnnualRent: 0,
-      warrantyInfo: "",
       expectedDeliveryDate: undefined,
       expiryDate: undefined,
       images: [],
@@ -67,7 +75,7 @@ export default function CreatePropertyPage() {
       longitude: undefined,
       whatsAppNumber: "",
       isInvestorOnly: false,
-    },
+    }
   })
 
   const {
@@ -82,14 +90,61 @@ export default function CreatePropertyPage() {
 
   const validateCurrentStep = async () => {
     const currentStepSchema = STEPS[currentStep - 1].schema
-    const isValid = await trigger(Object.keys(currentStepSchema.shape) as any)
+
+    // Get all fields from the schema
+    const fields = Object.keys(currentStepSchema.shape) as Array<keyof CreatePropertyFormData>
+
+    // Manually trigger validation for all fields in the current step
+    const isValid = await trigger(fields)
+
+    // If this is a step that might need TranslationsJson validation
+    if (currentStep === 1 || currentStep === 2 || currentStep === 5) {
+      // Always validate TranslationsJson separately from Zod
+      const translationsValue = watch('TranslationsJson')
+      const currentLocale = locale || 'en'
+
+      // Check if TranslationsJson exists and has the current locale
+      if (!translationsValue || !translationsValue[currentLocale]) {
+        return false
+      }
+
+      // Check if required fields in the translation are filled
+      const currentTranslation = translationsValue[currentLocale]
+
+      if (currentStep === 1) {
+        // First step needs title validation
+        if (!currentTranslation.title || currentTranslation.title.trim() === '') {
+          return false
+        }
+      } else if (currentStep === 2) {
+        // Second step needs description validation
+        if (!currentTranslation.description || currentTranslation.description.trim() === '') {
+          return false
+        }
+      }
+    }
+
     return isValid
   }
 
   const nextStep = async () => {
+    setFormError(null) // Clear previous errors
     const isValid = await validateCurrentStep()
+
     if (isValid && currentStep < STEPS.length) {
       setCurrentStep(currentStep + 1)
+    } else if (!isValid) {
+      // Check if the validation issue is with TranslationsJson
+      const translationsValue = watch('TranslationsJson')
+      const currentLocale = locale || 'en'
+
+      if (!translationsValue || !translationsValue[currentLocale]) {
+        setFormError("Translation data is missing. Please add the required translation information.")
+      } else if (!translationsValue[currentLocale].title || translationsValue[currentLocale].title.trim() === '') {
+        setFormError("Title is required in the current language.")
+      } else if (!translationsValue[currentLocale].description || translationsValue[currentLocale].description.trim() === '') {
+        setFormError("Description is required in the current language.")
+      }
     }
   }
 
@@ -100,6 +155,28 @@ export default function CreatePropertyPage() {
   }
 
   const onSubmit = async (data: CreatePropertyFormData) => {
+    console.log("Submitting Property Data:", data)
+    setFormError(null)
+
+    // Validate TranslationsJson before submission
+    const translationsValue = data.TranslationsJson
+    const currentLocale = locale || 'en'
+
+    if (!translationsValue || !translationsValue[currentLocale]) {
+      setFormError("Translation data is missing. Please add the required translation information.")
+      return
+    }
+
+    if (!translationsValue[currentLocale].title || translationsValue[currentLocale].title.trim() === '') {
+      setFormError("Title is required in the current language.")
+      return
+    }
+
+    if (!translationsValue[currentLocale].description || translationsValue[currentLocale].description.trim() === '') {
+      setFormError("Description is required in the current language.")
+      return
+    }
+
     const features = Array.isArray(data.features)
       ? data.features.map((f) => String(Number(f)))
       : [];
@@ -109,12 +186,13 @@ export default function CreatePropertyPage() {
       whatsAppNumber: convertNumberToLocalFormat(data.whatsAppNumber as string) || "",
       features,
     };
+
     setIsSubmitting(true)
     try {
       const response = await createProperty(formattedData)
       if (response.succeeded) {
         toast.success("Property created successfully!")
-        router.push("/property")
+        router.push(`/${locale}/property`)
       } else {
         toast.error(response.message || "Failed to create property")
       }
@@ -137,45 +215,44 @@ export default function CreatePropertyPage() {
             <p className="mb-6 text-gray-600">{t('description')}</p>
           </div>
 
-          <StepIndicator currentStep={currentStep} totalSteps={STEPS.length} stepTitles={STEPS.map((step) => step.title)} />
+          <Stepper
+            steps={STEPS.map((step, index) => ({
+              title: step.title,
+              description: ''
+            }))}
+            currentStep={currentStep - 1}
+            onStepChange={(step) => setCurrentStep(step + 1)}
+            onNext={async () => await validateCurrentStep()}
+            onPrevious={prevStep}
+            disableNavigation={currentStep === STEPS.length}
+          />
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 mt-4">
             <CurrentStepComponent form={form} />
 
-            <div className="flex justify-between pt-6">
-              <Button
-                type="button"
-                variant="outline"
-                onClick={prevStep}
-                disabled={currentStep === 1}
-                className="flex items-center gap-2"
-              >
-                <ChevronLeft className={cn("h-4 w-4", params.locale === 'ar' ? "rotate-180" : "rotate-0")} />
-                {t('createProperty.btn.previous')}
-              </Button>
-
-              {currentStep < STEPS.length ? (
-                <Button type="button" onClick={nextStep} className="flex items-center gap-2">
-                  {t('createProperty.btn.next')}
-                  <ChevronRight className={cn("h-4 w-4", params.locale === 'ar' ? "rotate-180" : "rotate-0")} />
-                </Button>
-              ) : (
+            {currentStep === STEPS.length && (
+              <div className="flex justify-end pt-6">
                 <Button type="submit" disabled={isSubmitting} className="flex items-center gap-2">
                   {isSubmitting && <Loader2 className="h-4 w-4 animate-spin" />}
                   {t('createProperty.btn.createProperty')}
                 </Button>
-              )}
-            </div>
+              </div>
+            )}
           </form>
 
-          {/* Debug: Show validation errors */}
-          {Object.keys(errors).length > 0 && (
+          {/* Display validation errors */}
+          {(Object.keys(errors).length > 0 || formError) && (
             <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
               <h4 className="text-red-800 font-medium mb-2">{t('createProperty.validationErrors.title')}</h4>
               <ul className="text-red-700 text-sm space-y-1">
+                {formError && (
+                  <li key="translation-error">
+                    <strong>TranslationsJson:</strong> {formError}
+                  </li>
+                )}
                 {Object.entries(errors).map(([field, error]) => (
                   <li key={field}>
-                    <strong>{field}:</strong> {error?.message}
+                    <strong>{field}:</strong> {typeof error?.message === 'string' ? error.message : 'Validation error'}
                   </li>
                 ))}
               </ul>

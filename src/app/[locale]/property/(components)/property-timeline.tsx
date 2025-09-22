@@ -22,6 +22,7 @@ export default function PropertyTimeline({ propertyId }: PropertyTimelineProps) 
                 setIsLoading(true);
                 setError(null);
                 const response = await getPropertyTimeline(propertyId);
+                console.log('Fetched timeline data:', response);
                 if (response.succeeded && response.data) {
                     setTimelineData(response.data);
                 } else {
